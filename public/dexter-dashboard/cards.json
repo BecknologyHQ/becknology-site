@@ -1,0 +1,112 @@
+[
+  {
+    "id": "20260210-001",
+    "title": "The Glass Nobody Knows About",
+    "series": "Machines You've Never Seen",
+    "type": "tiktok",
+    "ticker": ["GLW"],
+    "body": "Every TV on the planet starts with this machine.\n\nIt takes molten glass at 2,000 degrees and pulls it into sheets thinner than a credit card. No touching. No polishing. Just gravity.\n\nOne company makes almost all of it. Corning. Ticker GLW. Up 76% this year.",
+    "cta": "Next time we're looking at the chip inside every PlayStation! This is Becknology where markets meet machines.",
+    "broll": "Fusion draw machine footage",
+    "created": "2026-02-10T23:30:00"
+  },
+  {
+    "id": "20260210-002",
+    "title": "Your Oreo Travels 1,000 Miles",
+    "series": "Machines You've Never Seen",
+    "type": "tiktok",
+    "ticker": ["MDLZ"],
+    "body": "This machine makes 25,000 Oreos per minute.\n\nThe cream gets injected at exactly 3.5 grams -- every single cookie. One factory runs 24/7 and ships to 100 countries.\n\nThe company behind it? Mondelez. Ticker MDLZ. JP Morgan says it's worth $69.",
+    "cta": "Stick around, we've got aluminum cans next! This is Becknology where markets meet machines.",
+    "broll": "Oreo production line",
+    "created": "2026-02-10T23:30:00"
+  },
+  {
+    "id": "20260210-003",
+    "title": "Every Can You've Ever Opened",
+    "series": "Machines You've Never Seen",
+    "type": "tiktok",
+    "ticker": ["BALL"],
+    "body": "100 billion aluminum cans get made every year. This is the machine that does it.\n\nA flat aluminum disc gets punched, stretched, and shaped into a can in under a second. 2,400 cans per minute. One machine.\n\nThe company that dominates? Ball Corporation. Ticker BALL. They make 1 in 4 cans on Earth.",
+    "cta": "Stick around, we've got razors next! This is Becknology where markets meet machines.",
+    "broll": "Can stamping line footage",
+    "created": "2026-02-10T23:30:00"
+  },
+  {
+    "id": "20260210-004",
+    "title": "The Razor Blade Factory",
+    "series": "Machines You've Never Seen",
+    "type": "tiktok",
+    "ticker": ["PG"],
+    "body": "A single razor blade gets 14 separate processes before it touches your face.\n\nHardened steel, laser-cut, coated in chromium, then platinum, then a polymer. Each blade edge is 700 atoms wide.\n\nProcter & Gamble owns Gillette. Ticker PG. Warren Buffett's been holding it for decades.",
+    "cta": "Follow along, next time is the machine that makes toilet paper at a hundred miles per hour! This is Becknology where markets meet machines.",
+    "broll": "Razor blade manufacturing, Gillette factory",
+    "created": "2026-02-10T23:30:00"
+  },
+  {
+    "id": "20260210-005",
+    "title": "PlayStation's Secret Weapon",
+    "series": "Machines You've Never Seen",
+    "type": "tiktok",
+    "ticker": ["SONY"],
+    "body": "Every PlayStation camera, every iPhone face unlock -- same company.\n\nSony makes 50% of the world's image sensors. Not the phones. Not the cameras. The tiny chip inside that actually captures the light.\n\nTicker SONY. Analysts say 41% upside from here. Most people only think of them as a gaming company.",
+    "cta": "Next time we're looking at the stock behind the internet! This is Becknology where markets meet machines.",
+    "broll": "Image sensor fab, PlayStation assembly",
+    "created": "2026-02-10T23:30:00"
+  },
+  {
+    "id": "20260210-006",
+    "title": "Toilet Paper at 100 MPH",
+    "series": "Machines You've Never Seen",
+    "type": "tiktok",
+    "ticker": ["PG"],
+    "body": "This machine turns wood pulp into toilet paper at 100 miles per hour.\n\nThe paper gets pressed, dried, creped for softness, and wound onto rolls -- all in one continuous line. One factory makes enough for 50 million people per year.\n\nProcter & Gamble. Ticker PG. They make Charmin, Bounty, and Puffs -- all on machines like this.",
+    "cta": "Follow along, next time we're looking at the stock behind the internet! This is Becknology where markets meet machines.",
+    "broll": "Tissue paper manufacturing line",
+    "created": "2026-02-10T23:30:00"
+  },
+  {
+    "id": "20260210-007",
+    "title": "Who Actually Makes Your Internet Work",
+    "series": "The Stock Behind The Thing",
+    "type": "tiktok",
+    "ticker": ["GLW"],
+    "body": "This cable carries 800 terabits per second. Enough to stream every Netflix show simultaneously.\n\nFiber optic cable. Hair-thin glass threads carrying data at the speed of light. And one company makes more of it than anyone else.\n\nCorning. Same company that makes your TV glass. Ticker GLW. Data centers can't scale without them.",
+    "cta": "Next time, the machine inside every Amazon box! This is Becknology where markets meet machines.",
+    "broll": "Fiber optic manufacturing, data center",
+    "created": "2026-02-10T23:30:00"
+  },
+  {
+    "id": "20260210-008",
+    "title": "The Machine Inside Every Amazon Box",
+    "series": "The Stock Behind The Thing",
+    "type": "tiktok",
+    "ticker": ["PKG"],
+    "body": "2 billion packages a year. Every one needs a box. This is how they're made.\n\nCorrugated cardboard -- three layers bonded at 350 degrees, cut and folded by machines running 24/7. One factory outputs 1 million boxes a day.\n\nPackaging Corp of America. Ticker PKG. E-commerce can't exist without them.",
+    "cta": "Stick around, next up is what's actually inside your energy drink! This is Becknology where markets meet machines.",
+    "broll": "Corrugator machine, box factory",
+    "created": "2026-02-10T23:30:00"
+  },
+  {
+    "id": "20260210-009",
+    "title": "What's Actually Inside Your Energy Drink",
+    "series": "The Stock Behind The Thing",
+    "type": "tiktok",
+    "ticker": ["BALL"],
+    "body": "Red Bull, Monster, Celsius -- they all use the same can.\n\nAluminum. Recycled in 60 days. Cooled faster than glass. Lighter to ship than plastic. And Ball Corporation makes a quarter of every can on the planet.\n\nTicker BALL. The drink brand doesn't matter. The can company always wins.",
+    "cta": "Next time, the robot that replaced 800 workers! This is Becknology where markets meet machines.",
+    "broll": "Canning line, energy drink production",
+    "created": "2026-02-10T23:30:00"
+  },
+  {
+    "id": "20260210-010",
+    "title": "The Robot That Replaced 800 Workers",
+    "series": "The Stock Behind The Thing",
+    "type": "tiktok",
+    "ticker": ["FANUY", "ROK"],
+    "body": "Amazon has 750,000 robots in its warehouses. This one moves 1,000 packages per hour.\n\nIt sees, picks, sorts, and routes -- no human needed. Five years ago this job took a team of 800 people per shift.\n\nThe robots come from companies like Fanuc and Rockwell. Automation is eating logistics.",
+    "cta": "Follow along, next time we're looking at the glass nobody knows about! This is Becknology where markets meet machines.",
+    "broll": "Amazon warehouse robots, Fanuc arms",
+    "created": "2026-02-10T23:30:00"
+  }
+]

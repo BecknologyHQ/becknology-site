@@ -1,0 +1,40 @@
+{
+  "schedule": [
+    {"hour": 6, "label": "Market Open Hook"},
+    {"hour": 8, "label": "Wild Fact + Ticker"},
+    {"hour": 10, "label": "Industry Insight"},
+    {"hour": 12, "label": "Trending Topic"},
+    {"hour": 15, "label": "Quote/Engage"},
+    {"hour": 18, "label": "After-Hours Content"},
+    {"hour": 21, "label": "Night Owl Thought"}
+  ],
+  "posts": {
+    "2026-02-01": [
+      {"hour": 6, "content": "gm ☀️\n\nThe humanoid robot wars have officially begun.\n\nBoston Dynamics, Figure, Tesla Optimus — all now working real factory shifts.\n\nThis isn't sci-fi anymore. This is investable."},
+      {"hour": 8, "content": "Amazon now has 750,000+ robots in their warehouses.\n\nMore robots than some countries have people.\n\nThey just acquired Rightbot for truck unloading automation.\n\n$AMZN isn't just e-commerce. It's the world's largest robotics company."},
+      {"hour": 10, "content": "The hidden trade behind AI:\n\nEvery ChatGPT query uses 10x the electricity of a Google search.\n\nData center demand: 19 GW today → 35 GW by 2030.\n\nWho benefits?\n\n$VRT — Cooling systems (up 450% in 2 years)\n$CEG — Largest nuclear fleet\n$ETN — Power distribution\n\nAI isn't just $NVDA."},
+      {"hour": 12, "content": "Figure 02 robots are now working shifts at BMW.\n\nNot demos. Not prototypes. Real production work.\n\nHyundai deploying Boston Dynamics Atlas at their Georgia plant.\n\nThe factory floor just changed forever."},
+      {"hour": 15, "content": "Everyone's talking about AI software.\n\nNobody's talking about who keeps the servers running.\n\n$VRT is Deutsche Bank's top pick for 2026.\n\nPicks and shovels of the AI gold rush."},
+      {"hour": 18, "content": "88% of Fortune 500 manufacturers use Rockwell Automation.\n\n$ROK is the Microsoft of the factory floor.\n\nYou've never heard of them because they don't sell to consumers.\n\nBut every product you touch? Their PLCs made it."},
+      {"hour": 21, "content": "By 2030, the average warehouse will have more robots than humans.\n\nWe're watching the biggest labor shift since the assembly line.\n\nThe question isn't if — it's who owns the robots."}
+    ],
+    "2026-02-02": [
+      {"hour": 6, "content": "gm ☀️\n\nSuper Bowl ad costs: $7M for 30 seconds.\n\nThe real winners? Companies that make the screens you'll watch it on.\n\n$GLW (Corning) makes the glass for every major TV brand."},
+      {"hour": 8, "content": "400 billion cardboard boxes are made every year.\n\nThat's enough to wrap the Earth 52 times.\n\nEvery single one goes through automated converting lines.\n\n$WRK and $IP run this $300B industry you never think about."},
+      {"hour": 10, "content": "Microsoft just restarted Three Mile Island.\n\nNot for nostalgia — for data centers.\n\nMeta signed a 20-year, 1.1 GW nuclear deal.\n\nAmazon and Google are buying reactors, not solar panels.\n\nThe AI energy crisis is real. Nuclear is the answer."},
+      {"hour": 12, "content": "Trump just signed executive orders:\n\n100 GW → 400 GW nuclear capacity by 2050.\n\n$CEG (Constellation Energy) owns the largest nuclear fleet in America.\n\nThey're already powering Microsoft and Meta data centers."},
+      {"hour": 15, "content": "The \"picks and shovels\" of AI:\n\n1. Power ($VRT, $CEG, $ETN)\n2. Cooling ($VRT)\n3. Networking ($GLW fiber)\n4. Robots ($SYM, $ROK)\n\n$NVDA gets the headlines. Infrastructure gets the profits."},
+      {"hour": 18, "content": "Symbotic ($SYM) has a $22.5 billion backlog.\n\nThey make AI-powered warehouse robots.\n\nStock up 162% YTD.\n\nThey just acquired Walmart's robotics division.\n\nThis is how you play the e-commerce boom without betting on retail."},
+      {"hour": 21, "content": "There are 1 million open manufacturing jobs in America right now.\n\nCompanies aren't waiting for workers anymore.\n\nThey're buying robots.\n\nAutomation isn't replacing humans — it's filling the gap humans can't."}
+    ],
+    "2026-02-03": [
+      {"hour": 6, "content": "gm ☀️\n\nNew week, new machines.\n\nWatching $VRT closely — cooling systems for data centers.\n\nDeutsche Bank's top pick for 2026. Up 450% in 2 years."},
+      {"hour": 8, "content": "Every can of Coca-Cola is made on a machine that produces 2,000 cans per minute.\n\nThat's 33 cans per second.\n\nBall Corporation ($BALL) makes 100 billion cans per year.\n\nThe most efficient manufacturing on Earth."},
+      {"hour": 10, "content": "FANUC ($FANUY) is the world's largest industrial robot manufacturer.\n\nTheir robots build cars, electronics, and other robots.\n\nThey've installed over 1 million robots worldwide.\n\nIf you own a car, a FANUC robot probably welded it."},
+      {"hour": 12, "content": "China's robot density: 392 robots per 10,000 workers.\n\nUSA: 285 per 10,000.\n\nThey're not just catching up — they're passing us.\n\n$FANUY, $ABB, $ROK — the arms dealers of the automation race."},
+      {"hour": 15, "content": "PLC programming is a $100K+ skill nobody teaches.\n\nUniversities push software engineering.\n\nFactories are desperate for automation engineers.\n\nThe shortage is only getting worse."},
+      {"hour": 18, "content": "Eaton ($ETN) just acquired Boyd Thermal for $9.5B.\n\nBoyd makes cooling systems for data centers and EVs.\n\nEvery AI chip needs thermal management.\n\n$ETN is playing both sides of the electrification trade."},
+      {"hour": 21, "content": "The factory that exists twice:\n\nDigital twins let engineers test changes before touching real equipment.\n\n$NVDA Omniverse, Siemens, Rockwell — all racing to simulate reality.\n\nThe future of manufacturing is virtual first."}
+    ]
+  }
+}

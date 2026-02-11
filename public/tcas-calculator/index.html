@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation ROI Calculator | TCAS Industrial Solutions</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #1e40af;
+            --primary-light: #3b82f6;
+            --primary-dark: #1e3a8a;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f8fafc;
+            --white: #ffffff;
+            --success: #059669;
+            --accent: #f59e0b;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header {
+            background: var(--primary-dark);
+            color: white;
+            padding: 15px 0;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .logo span { color: var(--accent); }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+        }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Calculator */
+        .calculator {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin: -40px 20px 40px;
+            position: relative;
+        }
+        
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .input-section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+        
+        .input-group {
+            margin-bottom: 25px;
+        }
+        
+        .input-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .input-group .hint {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+        
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        
+        .input-group input:focus, .input-group select:focus {
+            outline: none;
+            border-color: var(--primary-light);
+        }
+        
+        .input-prefix {
+            position: relative;
+        }
+        
+        .input-prefix span {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+        }
+        
+        .input-prefix input {
+            padding-left: 30px;
+        }
+        
+        /* Results */
+        .results-section {
+            background: var(--bg);
+            border-radius: 12px;
+            padding: 30px;
+        }
+        
+        .results-section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+        
+        .result-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .result-card.highlight {
+            border-left-color: var(--success);
+            background: #ecfdf5;
+        }
+        
+        .result-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+        
+        .result-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+        
+        .result-card.highlight .result-value {
+            color: var(--success);
+        }
+        
+        .result-note {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+        
+        /* CTA */
+        .cta-section {
+            margin-top: 30px;
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 12px;
+            color: white;
+        }
+        
+        .cta-section h3 {
+            margin-bottom: 10px;
+        }
+        
+        .cta-section p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 14px 30px;
+            background: var(--accent);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Form modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.active { display: flex; }
+        
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 500px;
+            width: 90%;
+        }
+        
+        .modal-content h3 {
+            margin-bottom: 20px;
+        }
+        
+        .modal-content .input-group { margin-bottom: 20px; }
+        
+        .modal-content button {
+            width: 100%;
+            padding: 14px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .close-modal {
+            float: right;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+        
+        /* Benefits */
+        .benefits {
+            padding: 60px 0;
+        }
+        
+        .benefits h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.8rem;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-card h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer p { opacity: 0.8; font-size: 0.9rem; }
+        
+        @media (max-width: 768px) {
+            .calc-grid { grid-template-columns: 1fr; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">TCAS<span>.</span></div>
+            <nav>
+                <a href="#">Solutions</a>
+                <a href="#">Industries</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Automation ROI Calculator</h1>
+            <p>See exactly how much you could save by automating your manual processes. Get a custom estimate in 60 seconds.</p>
+        </div>
+    </section>
+    
+    <div class="container">
+        <section class="calculator">
+            <div class="calc-grid">
+                <div class="input-section">
+                    <h2>📊 Your Current Process</h2>
+                    
+                    <div class="input-group">
+                        <label>Process Type</label>
+                        <select id="process-type" onchange="calculate()">
+                            <option value="assembly">Assembly / Packaging</option>
+                            <option value="inspection">Quality Inspection</option>
+                            <option value="material">Material Handling</option>
+                            <option value="welding">Welding / Fabrication</option>
+                            <option value="palletizing">Palletizing</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Manual Workers Currently</label>
+                        <input type="number" id="workers" value="3" min="1" max="100" onchange="calculate()">
+                        <div class="hint">Number of people doing this task</div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Average Hourly Wage (fully loaded)</label>
+                        <div class="input-prefix">
+                            <span>$</span>
+                            <input type="number" id="wage" value="35" min="15" max="100" onchange="calculate()">
+                        </div>
+                        <div class="hint">Include benefits, taxes (~1.3x base wage)</div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Hours Per Week on This Task</label>
+                        <input type="number" id="hours" value="40" min="1" max="168" onchange="calculate()">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Current Defect/Error Rate</label>
+                        <select id="defect-rate" onchange="calculate()">
+                            <option value="0.01">~1% (Low)</option>
+                            <option value="0.03" selected>~3% (Average)</option>
+                            <option value="0.05">~5% (High)</option>
+                            <option value="0.10">~10% (Very High)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="results-section">
+                    <h2>💰 Your Potential Savings</h2>
+                    
+                    <div class="result-card">
+                        <div class="result-label">Current Annual Labor Cost</div>
+                        <div class="result-value" id="current-cost">$218,400</div>
+                    </div>
+                    
+                    <div class="result-card">
+                        <div class="result-label">Estimated Automation Cost (Year 1)</div>
+                        <div class="result-value" id="automation-cost">$150,000</div>
+                        <div class="result-note">Includes equipment, integration, training</div>
+                    </div>
+                    
+                    <div class="result-card highlight">
+                        <div class="result-label">First Year Savings</div>
+                        <div class="result-value" id="first-year">$68,400</div>
+                    </div>
+                    
+                    <div class="result-card highlight">
+                        <div class="result-label">5-Year Total Savings</div>
+                        <div class="result-value" id="five-year">$942,000</div>
+                        <div class="result-note">ROI: 628%</div>
+                    </div>
+                    
+                    <div class="result-card">
+                        <div class="result-label">Payback Period</div>
+                        <div class="result-value" id="payback">8.2 months</div>
+                    </div>
+                    
+                    <div class="cta-section">
+                        <h3>Ready for a Detailed Quote?</h3>
+                        <p>Our engineers will analyze your specific process and provide a custom automation proposal.</p>
+                        <a href="#" class="cta-button" onclick="showModal(); return false;">Get Custom Quote →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="benefits">
+            <h2>Why Automate With TCAS?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤖</div>
+                    <h3>Turnkey Solutions</h3>
+                    <p>From design to installation to training. We handle everything.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Proven ROI</h3>
+                    <p>Average payback under 18 months across 200+ installations.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛠️</div>
+                    <h3>Ongoing Support</h3>
+                    <p>24/7 monitoring, preventive maintenance, and rapid response.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal" id="quote-modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">×</button>
+            <h3>Get Your Custom Quote</h3>
+            <form id="quote-form" onsubmit="submitQuote(event)">
+                <div class="input-group">
+                    <label>Name</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="input-group">
+                    <label>Company</label>
+                    <input type="text" name="company" required>
+                </div>
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label>Phone</label>
+                    <input type="tel" name="phone">
+                </div>
+                <div class="input-group">
+                    <label>Tell us about your process</label>
+                    <textarea name="notes" rows="3" style="width:100%;padding:12px;border:2px solid #e5e7eb;border-radius:8px;"></textarea>
+                </div>
+                <input type="hidden" id="calc-data" name="calculator_data">
+                <button type="submit">Request Quote</button>
+            </form>
+            <div id="quote-success" style="display:none;text-align:center;padding:30px;">
+                <h3>🎉 Request Received!</h3>
+                <p>Our team will contact you within 24 hours with a custom proposal.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2026 TCAS Industrial Automation Solutions</p>
+            <p style="margin-top:10px;">Kansas City Metro Area | <a href="mailto:sales@tcas.com" style="color:white;">sales@tcas.com</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function calculate() {
+            const workers = parseInt(document.getElementById('workers').value) || 3;
+            const wage = parseInt(document.getElementById('wage').value) || 35;
+            const hours = parseInt(document.getElementById('hours').value) || 40;
+            const defectRate = parseFloat(document.getElementById('defect-rate').value) || 0.03;
+            const processType = document.getElementById('process-type').value;
+            
+            // Current annual labor cost
+            const weeksPerYear = 52;
+            const currentCost = workers * wage * hours * weeksPerYear;
+            
+            // Automation cost estimate (varies by process)
+            const baseCosts = {
+                assembly: 120000,
+                inspection: 80000,
+                material: 100000,
+                welding: 180000,
+                palletizing: 150000,
+                other: 130000
+            };
+            const automationCost = baseCosts[processType] * (1 + (workers - 1) * 0.15);
+            
+            // Savings calculations
+            // Assume automation reduces labor by 80%, keeps 1 person for oversight
+            const automatedLaborCost = wage * hours * weeksPerYear * 1; // 1 person remains
+            const laborSavings = currentCost - automatedLaborCost;
+            
+            // Quality savings (reduced defects)
+            const avgUnitValue = 50; // Assume $50 avg unit value
+            const unitsPerYear = hours * weeksPerYear * workers * 10; // 10 units/hour/person
+            const currentDefectCost = unitsPerYear * defectRate * avgUnitValue;
+            const automatedDefectRate = defectRate * 0.1; // 90% reduction in defects
+            const qualitySavings = currentDefectCost * 0.9;
+            
+            // First year (subtract automation cost)
+            const totalAnnualSavings = laborSavings + qualitySavings;
+            const firstYearSavings = totalAnnualSavings - automationCost;
+            
+            // 5 year (automation cost only year 1, plus maintenance ~5%/year)
+            const maintenanceCost = automationCost * 0.05 * 4; // Years 2-5
+            const fiveYearSavings = (totalAnnualSavings * 5) - automationCost - maintenanceCost;
+            
+            // Payback period
+            const paybackMonths = (automationCost / totalAnnualSavings) * 12;
+            
+            // ROI
+            const roi = ((fiveYearSavings / automationCost) * 100).toFixed(0);
+            
+            // Update display
+            document.getElementById('current-cost').textContent = '$' + currentCost.toLocaleString();
+            document.getElementById('automation-cost').textContent = '$' + Math.round(automationCost).toLocaleString();
+            document.getElementById('first-year').textContent = '$' + Math.round(firstYearSavings).toLocaleString();
+            document.getElementById('five-year').textContent = '$' + Math.round(fiveYearSavings).toLocaleString();
+            document.getElementById('payback').textContent = paybackMonths.toFixed(1) + ' months';
+            
+            // Update ROI note
+            document.querySelector('#five-year').parentElement.querySelector('.result-note').textContent = 'ROI: ' + roi + '%';
+            
+            // Store for form submission
+            window.calcResults = {
+                currentCost, automationCost, firstYearSavings, fiveYearSavings, paybackMonths, roi,
+                inputs: { workers, wage, hours, defectRate, processType }
+            };
+        }
+        
+        function showModal() {
+            document.getElementById('quote-modal').classList.add('active');
+            document.getElementById('calc-data').value = JSON.stringify(window.calcResults);
+        }
+        
+        function closeModal() {
+            document.getElementById('quote-modal').classList.remove('active');
+        }
+        
+        function submitQuote(e) {
+            e.preventDefault();
+            const form = e.target;
+            const data = new FormData(form);
+            const obj = {};
+            data.forEach((v, k) => obj[k] = v);
+            
+            console.log('Quote request:', obj);
+            // In production: send to CRM/email
+            
+            form.style.display = 'none';
+            document.getElementById('quote-success').style.display = 'block';
+        }
+        
+        // Initial calculation
+        calculate();
+    </script>
+</body>
+</html>

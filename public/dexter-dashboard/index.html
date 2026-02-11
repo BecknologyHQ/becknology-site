@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dexter — Becknology Content HQ</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #e4e4e7;
+            min-height: 100vh;
+        }
+
+        nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(10,10,10,0.92); backdrop-filter: blur(12px);
+            border-bottom: 1px solid #27272a;
+            padding: 12px 24px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        nav .brand { display: flex; align-items: center; gap: 12px; }
+        nav .brand h1 { font-size: 1.2em; }
+        nav .brand span { color: #a1a1aa; font-size: 0.85em; }
+        .status-pill {
+            background: #14532d; color: #4ade80; padding: 6px 16px;
+            border-radius: 20px; font-size: 0.8em; font-weight: 600;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .status-pill::before { content: ''; width: 8px; height: 8px; background: #4ade80; border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%,100% { opacity:1 } 50% { opacity:0.4 } }
+
+        .tabs {
+            display: flex; gap: 0; border-bottom: 1px solid #27272a;
+            padding: 0 24px; background: #0a0a0a;
+        }
+        .tab {
+            padding: 14px 24px; cursor: pointer; font-size: 0.9em; font-weight: 500;
+            color: #71717a; border-bottom: 2px solid transparent; transition: all 0.2s;
+        }
+        .tab:hover { color: #e4e4e7; }
+        .tab.active { color: #3b82f6; border-bottom-color: #3b82f6; }
+        .tab .count {
+            background: #27272a; color: #a1a1aa; padding: 2px 8px;
+            border-radius: 10px; font-size: 0.8em; margin-left: 6px;
+        }
+        .tab.active .count { background: #1e3a5f; color: #60a5fa; }
+
+        .content { max-width: 900px; margin: 0 auto; padding: 24px; }
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
+
+        .stats-bar {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px; margin-bottom: 24px;
+        }
+        .stat-box {
+            background: #18181b; border: 1px solid #27272a; border-radius: 10px;
+            padding: 16px; text-align: center;
+        }
+        .stat-num { font-size: 1.8em; font-weight: 700; color: #3b82f6; }
+        .stat-label { color: #71717a; font-size: 0.8em; margin-top: 4px; }
+
+        .script-card {
+            background: #18181b; border: 1px solid #27272a; border-radius: 12px;
+            padding: 24px; margin-bottom: 16px; transition: border-color 0.2s;
+        }
+        .script-card:hover { border-color: #3f3f46; }
+        .script-card.approved { border-left: 4px solid #4ade80; }
+        .script-card.posted { border-left: 4px solid #3b82f6; }
+        .script-card.scheduled { border-left: 4px solid #a78bfa; }
+        .script-card.discarded { border-left: 4px solid #f87171; opacity: 0.5; }
+
+        .card-header {
+            display: flex; justify-content: space-between; align-items: flex-start;
+            margin-bottom: 16px;
+        }
+        .card-title { font-size: 1.1em; font-weight: 600; }
+        .card-meta { color: #71717a; font-size: 0.8em; margin-top: 4px; }
+        .card-badge {
+            font-size: 0.75em; padding: 4px 12px; border-radius: 12px; font-weight: 600;
+        }
+        .badge-tiktok { background: #1e1e1e; color: #ff6b6b; border: 1px solid #ff6b6b33; }
+        .badge-x { background: #1e1e1e; color: #1d9bf0; border: 1px solid #1d9bf033; }
+        .badge-youtube { background: #1e1e1e; color: #ff0000; border: 1px solid #ff000033; }
+        .status-tag {
+            display: inline-block; font-size: 0.7em; padding: 3px 10px;
+            border-radius: 8px; font-weight: 600; margin-left: 8px; vertical-align: middle;
+        }
+        .status-tag.new { background: #422006; color: #facc15; }
+        .status-tag.approved { background: #14532d; color: #4ade80; }
+        .status-tag.scheduled { background: #2e1065; color: #a78bfa; }
+        .status-tag.posted { background: #1e3a5f; color: #60a5fa; }
+
+        .script-body {
+            background: #0f0f0f; border-radius: 8px; padding: 16px;
+            font-size: 0.95em; line-height: 1.7; white-space: pre-wrap;
+            margin-bottom: 16px; border: 1px solid #1f1f1f;
+        }
+        .script-ticker {
+            display: inline-block; background: #14532d; color: #4ade80;
+            padding: 3px 10px; border-radius: 6px; font-size: 0.85em;
+            font-weight: 600; margin-right: 8px; margin-bottom: 4px;
+        }
+        .script-cta {
+            background: #172554; color: #60a5fa; padding: 10px 14px;
+            border-radius: 8px; font-size: 0.9em; margin-bottom: 16px;
+            border-left: 3px solid #3b82f6;
+        }
+
+        .actions {
+            display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+        }
+        .btn {
+            padding: 8px 20px; border-radius: 8px; border: 1px solid #27272a;
+            background: #18181b; color: #e4e4e7; cursor: pointer;
+            font-size: 0.85em; font-weight: 500; transition: all 0.15s;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .btn:hover { background: #27272a; }
+        .btn-approve { border-color: #16a34a; color: #4ade80; }
+        .btn-approve:hover { background: #14532d; }
+        .btn-approve.active { background: #14532d; border-color: #4ade80; }
+        .btn-schedule { border-color: #7c3aed; color: #a78bfa; }
+        .btn-schedule:hover { background: #2e1065; }
+        .btn-schedule.active { background: #2e1065; border-color: #a78bfa; }
+        .btn-posted { border-color: #2563eb; color: #60a5fa; }
+        .btn-posted:hover { background: #1e3a5f; }
+        .btn-posted.active { background: #1e3a5f; border-color: #60a5fa; }
+        .btn-discard { border-color: #dc2626; color: #f87171; }
+        .btn-discard:hover { background: #450a0a; }
+        .btn-discard.active { background: #450a0a; border-color: #f87171; }
+
+        .refresh-info {
+            text-align: center; color: #52525b; font-size: 0.75em;
+            padding: 8px; border-top: 1px solid #1f1f1f; margin-top: 24px;
+        }
+
+        .empty { text-align: center; padding: 60px 20px; color: #52525b; }
+        .empty .icon { font-size: 3em; margin-bottom: 16px; }
+
+        @media (max-width: 600px) {
+            .tabs { overflow-x: auto; }
+            .tab { padding: 12px 16px; white-space: nowrap; }
+            .actions { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="brand">
+        <h1>📊 Dexter</h1>
+        <span>Becknology Content HQ</span>
+    </div>
+    <div class="status-pill" id="live-status">Live</div>
+</nav>
+
+<div class="tabs">
+    <div class="tab active" data-tab="new">🆕 New <span class="count" id="new-count">0</span></div>
+    <div class="tab" data-tab="approved">✅ Use <span class="count" id="approved-count">0</span></div>
+    <div class="tab" data-tab="posted">📤 Posted <span class="count" id="posted-count">0</span></div>
+</div>
+
+<div class="content">
+    <div class="stats-bar">
+        <div class="stat-box">
+            <div class="stat-num" id="stat-new">0</div>
+            <div class="stat-label">New Ideas</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-num" id="stat-approved">0</div>
+            <div class="stat-label">Will Use</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-num" id="stat-posted">0</div>
+            <div class="stat-label">Posted</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-num" id="stat-updated">--</div>
+            <div class="stat-label">Last Refresh</div>
+        </div>
+    </div>
+
+    <div class="tab-panel active" id="panel-new"></div>
+    <div class="tab-panel" id="panel-approved"></div>
+    <div class="tab-panel" id="panel-posted"></div>
+</div>
+
+<div style="max-width:900px;margin:24px auto;padding:0 24px;">
+    <div style="background:#18181b;border:1px solid #27272a;border-radius:12px;padding:24px;">
+        <h3 style="margin-bottom:12px;font-size:1em;">💬 Talk to Dexter</h3>
+        <textarea id="dexter-msg" rows="3" placeholder="Tell Dexter what to research, change, or focus on next..." style="width:100%;background:#0f0f0f;color:#e4e4e7;border:1px solid #27272a;border-radius:8px;padding:12px;font-size:0.95em;resize:vertical;font-family:inherit;"></textarea>
+        <div style="display:flex;gap:10px;margin-top:10px;">
+            <button class="btn btn-approve" onclick="sendToDexter()" id="send-btn">📨 Send to Dexter</button>
+            <span id="send-status" style="color:#52525b;font-size:0.85em;align-self:center;"></span>
+        </div>
+        <div id="msg-history" style="margin-top:16px;"></div>
+    </div>
+</div>
+
+<div class="refresh-info" id="refresh-info">Auto-refreshes every 2 minutes &middot; Content updated by Dexter every 2 hours</div>
+
+<script>
+let CARDS = [];
+let lastFetch = null;
+
+// === STATE (localStorage) ===
+function getState() {
+    try { return JSON.parse(localStorage.getItem('dexter-v2') || '{}'); } catch { return {}; }
+}
+function saveState(s) { localStorage.setItem('dexter-v2', JSON.stringify(s)); }
+function cardStatus(id) { return getState()[id] || 'new'; }
+function setStatus(id, status) {
+    const s = getState();
+    s[id] = status;
+    saveState(s);
+    render();
+}
+
+// === FETCH CARDS ===
+async function fetchCards() {
+    try {
+        const r = await fetch('cards.json?t=' + Date.now());
+        if (!r.ok) throw new Error(r.status);
+        CARDS = await r.json();
+        lastFetch = new Date();
+        render();
+    } catch (e) {
+        console.error('Fetch failed:', e);
+    }
+}
+
+// === RENDER ===
+function renderCard(card, showActions) {
+    const st = cardStatus(card.id);
+    const badgeClass = card.type === 'tiktok' ? 'badge-tiktok' : card.type === 'x' ? 'badge-x' : 'badge-youtube';
+    const badgeLabel = card.type === 'tiktok' ? 'TikTok' : card.type === 'x' ? 'X Post' : 'YouTube';
+
+    let statusTag = '';
+    if (st === 'approved') statusTag = '<span class="status-tag approved">WILL USE</span>';
+    else if (st === 'scheduled') statusTag = '<span class="status-tag scheduled">SCHEDULED</span>';
+    else if (st === 'posted') statusTag = '<span class="status-tag posted">POSTED</span>';
+
+    let actionsHTML = '';
+    if (st === 'new') {
+        actionsHTML = `
+            <button class="btn btn-approve" onclick="setStatus('${card.id}','approved')">👍 I'll Use This</button>
+            <button class="btn btn-discard" onclick="setStatus('${card.id}','discarded')">👎 Don't Use</button>`;
+    } else if (st === 'approved') {
+        actionsHTML = `
+            <button class="btn btn-posted" onclick="setStatus('${card.id}','posted')">📤 Posted</button>
+            <button class="btn btn-discard" onclick="setStatus('${card.id}','new')">↩️ Back to New</button>`;
+    } else if (st === 'posted') {
+        actionsHTML = `<span style="color:#52525b;font-size:0.85em">✅ Done</span>`;
+    }
+
+    return `
+    <div class="script-card ${st}">
+        <div class="card-header">
+            <div>
+                <div class="card-title">${card.title} ${statusTag}</div>
+                <div class="card-meta">${card.series || ''} ${card.broll ? '&middot; B-roll: ' + card.broll : ''}</div>
+            </div>
+            <span class="card-badge ${badgeClass}">${badgeLabel}</span>
+        </div>
+        <div class="script-body">${card.body}</div>
+        <div style="margin-bottom:12px">${(card.ticker||[]).map(t => '<span class="script-ticker">$' + t + '</span>').join('')}</div>
+        ${card.cta ? '<div class="script-cta">🎤 CTA: "' + card.cta + '"</div>' : ''}
+        <div class="actions">${actionsHTML}</div>
+    </div>`;
+}
+
+function render() {
+    const state = getState();
+    const newCards = CARDS.filter(c => (state[c.id] || 'new') === 'new');
+    const approved = CARDS.filter(c => state[c.id] === 'approved');
+    const posted = CARDS.filter(c => state[c.id] === 'posted');
+
+    // Counts
+    document.getElementById('new-count').textContent = newCards.length;
+    document.getElementById('approved-count').textContent = approved.length;
+    document.getElementById('posted-count').textContent = posted.length;
+    document.getElementById('stat-new').textContent = newCards.length;
+    document.getElementById('stat-approved').textContent = approved.length;
+    document.getElementById('stat-posted').textContent = posted.length;
+
+    if (lastFetch) {
+        const h = lastFetch.getHours() % 12 || 12;
+        const m = String(lastFetch.getMinutes()).padStart(2, '0');
+        const ap = lastFetch.getHours() >= 12 ? 'PM' : 'AM';
+        document.getElementById('stat-updated').textContent = h + ':' + m + ' ' + ap;
+    }
+
+    // Panels
+    document.getElementById('panel-new').innerHTML = newCards.length
+        ? newCards.map(c => renderCard(c, true)).join('')
+        : '<div class="empty"><div class="icon">🎉</div><p>All reviewed! Dexter is generating more ideas...</p></div>';
+
+    document.getElementById('panel-approved').innerHTML = approved.length
+        ? approved.map(c => renderCard(c, true)).join('')
+        : '<div class="empty"><div class="icon">📝</div><p>No approved scripts yet.</p></div>';
+
+    document.getElementById('panel-posted').innerHTML = posted.length
+        ? posted.map(c => renderCard(c, false)).join('')
+        : '<div class="empty"><div class="icon">📤</div><p>Nothing posted yet.</p></div>';
+}
+
+// TABS
+document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+    });
+});
+
+// === DEXTER MESSAGES ===
+function getMsgs() {
+    try { return JSON.parse(localStorage.getItem('dexter-msgs') || '[]'); } catch { return []; }
+}
+function saveMsgs(m) { localStorage.setItem('dexter-msgs', JSON.stringify(m)); }
+
+function sendToDexter() {
+    const ta = document.getElementById('dexter-msg');
+    const msg = ta.value.trim();
+    if (!msg) return;
+    const msgs = getMsgs();
+    msgs.unshift({ text: msg, time: new Date().toISOString() });
+    if (msgs.length > 20) msgs.length = 20;
+    saveMsgs(msgs);
+    ta.value = '';
+    document.getElementById('send-status').textContent = 'Sent! Dexter will see this on next content refresh.';
+    setTimeout(() => { document.getElementById('send-status').textContent = ''; }, 4000);
+    renderMsgs();
+
+    // Also save to messages.json for server pickup
+    fetch('messages.json', { method: 'PUT', body: JSON.stringify(msgs) }).catch(() => {});
+}
+
+function renderMsgs() {
+    const msgs = getMsgs();
+    const el = document.getElementById('msg-history');
+    if (!msgs.length) { el.innerHTML = ''; return; }
+    el.innerHTML = '<div style="color:#71717a;font-size:0.8em;margin-bottom:8px;">Recent messages:</div>' +
+        msgs.slice(0, 5).map(m => {
+            const d = new Date(m.time);
+            const t = d.toLocaleString('en-US', { month:'short', day:'numeric', hour:'numeric', minute:'2-digit' });
+            return '<div style="background:#0f0f0f;border:1px solid #1f1f1f;border-radius:6px;padding:8px 12px;margin-bottom:6px;font-size:0.85em;">' +
+                '<span style="color:#52525b;">' + t + ':</span> ' + m.text + '</div>';
+        }).join('');
+}
+
+// INIT + auto-refresh every 2 min
+fetchCards();
+setInterval(fetchCards, 120000);
+renderMsgs();
+</script>
+
+</body>
+</html>
