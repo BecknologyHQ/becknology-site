@@ -128,6 +128,7 @@ function NavBar({ navOpen, setNavOpen }) {
           <button className="bk-nav-link" onClick={() => scrollTo('feed')}>Discover</button>
           <button className="bk-nav-link" onClick={() => scrollTo('spotlight')}>Markets</button>
           <button className="bk-nav-link" onClick={() => scrollTo('resources')}>Resources</button>
+          <a className="bk-nav-link" href="./dexter-dashboard/" style={{textDecoration:'none'}}>Dexter</a>
         </div>
         <button className="bk-hamburger" onClick={() => setNavOpen(!navOpen)} aria-label="Menu">
           <span /><span /><span />
