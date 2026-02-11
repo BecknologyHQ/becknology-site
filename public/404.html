@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // GitHub Pages SPA redirect — preserves path for client-side routing
+    var path = window.location.pathname;
+    if (path.startsWith('/becknology-site/becknology-dashboard')) {
+      window.location.replace('/becknology-site/becknology-dashboard/');
+    } else if (path.startsWith('/becknology-site/dexter-dashboard')) {
+      window.location.replace('/becknology-site/dexter-dashboard/');
+    } else {
+      window.location.replace('/becknology-site/');
+    }
+  </script>
+</head>
+<body></body>
+</html>
