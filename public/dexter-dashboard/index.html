@@ -324,7 +324,7 @@ function getMsgs() {
 }
 function saveMsgs(m) { localStorage.setItem('dexter-msgs', JSON.stringify(m)); }
 
-function sendToDexter() {
+async function sendToDexter() {
     const ta = document.getElementById('dexter-msg');
     const msg = ta.value.trim();
     if (!msg) return;
@@ -333,12 +333,22 @@ function sendToDexter() {
     if (msgs.length > 20) msgs.length = 20;
     saveMsgs(msgs);
     ta.value = '';
-    document.getElementById('send-status').textContent = 'Sent! Dexter will see this on next content refresh.';
-    setTimeout(() => { document.getElementById('send-status').textContent = ''; }, 4000);
     renderMsgs();
 
-    // Also save to messages.json for server pickup
-    fetch('messages.json', { method: 'PUT', body: JSON.stringify(msgs) }).catch(() => {});
+    // Send via email to Taylor who routes to Dexter
+    const statusEl = document.getElementById('send-status');
+    statusEl.textContent = 'Sending...';
+    try {
+        const mailto = 'taylor@becknology.com';
+        const subject = encodeURIComponent('[Dexter Dashboard] ' + msg.substring(0, 60));
+        const body = encodeURIComponent('Dexter instruction from dashboard:\n\n' + msg + '\n\nSent: ' + new Date().toLocaleString());
+        window.open('mailto:' + mailto + '?subject=' + subject + '&body=' + body, '_blank');
+        statusEl.textContent = 'Opening email client... (or just tell Taylor in Slack!)';
+        statusEl.innerHTML = 'Message saved locally. <strong>Fastest way:</strong> message Taylor in Slack with your Dexter instructions.';
+    } catch(e) {
+        statusEl.textContent = 'Saved locally. Tell Taylor in Slack for fastest action.';
+    }
+    setTimeout(() => { statusEl.textContent = ''; }, 8000);
 }
 
 function renderMsgs() {
