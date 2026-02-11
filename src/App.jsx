@@ -129,6 +129,7 @@ function NavBar({ navOpen, setNavOpen }) {
           <button className="bk-nav-link" onClick={() => scrollTo('spotlight')}>Markets</button>
           <button className="bk-nav-link" onClick={() => scrollTo('resources')}>Resources</button>
           <a className="bk-nav-link" href="./dexter-dashboard/" style={{textDecoration:'none'}}>Dexter</a>
+          <a className="bk-nav-link" href="./tiktok/" style={{textDecoration:'none'}}>TikTok</a>
         </div>
         <button className="bk-hamburger" onClick={() => setNavOpen(!navOpen)} aria-label="Menu">
           <span /><span /><span />
@@ -338,7 +339,7 @@ function Footer() {
       <img src={logoSquare} alt="Becknology" className="bk-footer-logo" />
       <span className="bk-footer-tagline">Markets · Machines · Method</span>
       <div className="bk-footer-links">
-        <a href="#feed">Discover</a><a href="#spotlight">Markets</a><a href="#resources">Resources</a>
+        <a href="#feed">Discover</a><a href="#spotlight">Markets</a><a href="#resources">Resources</a><a href="./dexter-dashboard/">Dexter</a><a href="./tiktok/">TikTok</a>
       </div>
       <span className="bk-footer-copy">&copy; {new Date().getFullYear()} Becknology. Built in Kansas City.</span>
     </footer>

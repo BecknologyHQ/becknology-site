@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TikTok Content Hub — Becknology</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0a0a0a;color:#e4e4e7;min-height:100vh}
+nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.92);backdrop-filter:blur(12px);border-bottom:1px solid #27272a;padding:12px 24px;display:flex;align-items:center;justify-content:space-between}
+nav .brand{display:flex;align-items:center;gap:12px}
+nav .brand a{color:#e4e4e7;text-decoration:none;font-size:1.2em;font-weight:700}
+nav .brand span{color:#a1a1aa;font-size:.85em}
+nav .nav-links{display:flex;gap:16px}
+nav .nav-links a{color:#a1a1aa;text-decoration:none;font-size:.85em;transition:color .2s}
+nav .nav-links a:hover{color:#e4e4e7}
+.content{max-width:1100px;margin:0 auto;padding:24px}
+h2{font-size:1.4em;margin-bottom:16px;color:#f4f4f5}
+.section{margin-bottom:40px}
+.section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.badge{background:#1e3a5f;color:#60a5fa;padding:4px 12px;border-radius:12px;font-size:.75em;font-weight:600}
+.badge.green{background:#14532d;color:#4ade80}
+.badge.amber{background:#78350f;color:#fbbf24}
+.badge.pink{background:#831843;color:#f472b6}
+
+/* Calendar Grid */
+.calendar-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.cal-card{background:#18181b;border:1px solid #27272a;border-radius:10px;padding:16px;transition:border-color .2s}
+.cal-card:hover{border-color:#3b82f6}
+.cal-card .date{font-size:.75em;color:#71717a;margin-bottom:6px;font-weight:600;letter-spacing:.5px}
+.cal-card .event-name{font-weight:600;font-size:1em;margin-bottom:4px}
+.cal-card .hook{color:#a1a1aa;font-size:.85em;line-height:1.4}
+.cal-card .tickers{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap}
+.cal-card .ticker{background:#1a1a2e;color:#a78bfa;padding:2px 8px;border-radius:6px;font-size:.7em;font-weight:600;font-family:monospace}
+
+/* Script Queue */
+.script-queue{display:flex;flex-direction:column;gap:10px}
+.script-card{background:#18181b;border:1px solid #27272a;border-radius:10px;padding:16px;display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center}
+.script-card .num{background:#3b82f6;color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8em;font-weight:700}
+.script-card .info h3{font-size:.95em;margin-bottom:2px}
+.script-card .info p{color:#a1a1aa;font-size:.8em}
+.script-card .status{font-size:.75em;font-weight:600;padding:4px 12px;border-radius:12px}
+.status-draft{background:#1e1e2e;color:#a78bfa}
+.status-ready{background:#14532d;color:#4ade80}
+.status-posted{background:#1a1a2e;color:#6b7280}
+
+/* Research Panel */
+.research-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.research-card{background:#18181b;border:1px solid #27272a;border-radius:10px;padding:16px}
+.research-card h3{font-size:.95em;margin-bottom:8px}
+.research-card ul{list-style:none;padding:0}
+.research-card li{color:#a1a1aa;font-size:.85em;padding:4px 0;border-bottom:1px solid #1f1f23}
+.research-card li:last-child{border:none}
+.research-card li strong{color:#e4e4e7}
+
+/* Keyword Cloud */
+.keyword-cloud{display:flex;flex-wrap:wrap;gap:8px}
+.keyword{background:#1a1a2e;border:1px solid #27272a;color:#c4b5fd;padding:6px 14px;border-radius:20px;font-size:.8em;transition:all .2s;cursor:default}
+.keyword:hover{border-color:#8b5cf6;background:#1e1e3e}
+.keyword .vol{color:#71717a;font-size:.85em;margin-left:4px}
+
+/* Stats */
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:32px}
+.stat-card{background:#18181b;border:1px solid #27272a;border-radius:10px;padding:16px;text-align:center}
+.stat-card .value{font-size:1.8em;font-weight:800;background:linear-gradient(135deg,#8b5cf6,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-card .label{color:#71717a;font-size:.8em;margin-top:4px}
+
+footer{border-top:1px solid #27272a;padding:24px;text-align:center;color:#52525b;font-size:.8em;margin-top:40px}
+footer a{color:#a78bfa;text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">
+    <a href="../">Becknology</a>
+    <span>/ TikTok Content Hub</span>
+  </div>
+  <div class="nav-links">
+    <a href="../">Home</a>
+    <a href="../dexter-dashboard/">Dexter</a>
+  </div>
+</nav>
+
+<div class="content">
+
+  <!-- Stats -->
+  <div class="stats-row" style="margin-top:24px">
+    <div class="stat-card"><div class="value" id="scripts-count">0</div><div class="label">Scripts Queued</div></div>
+    <div class="stat-card"><div class="value" id="posted-count">0</div><div class="label">Posted This Week</div></div>
+    <div class="stat-card"><div class="value" id="upcoming-events">0</div><div class="label">Upcoming Events</div></div>
+    <div class="stat-card"><div class="value" id="keywords-tracked">0</div><div class="label">Keywords Tracked</div></div>
+  </div>
+
+  <!-- Seasonal Content Calendar -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Seasonal Content Calendar</h2>
+      <span class="badge">UPCOMING</span>
+    </div>
+    <div class="calendar-grid" id="calendar-grid"></div>
+  </div>
+
+  <!-- Script Queue -->
+  <div class="section">
+    <div class="section-header">
+      <h2>TikTok Script Queue</h2>
+      <span class="badge green">PRODUCTION</span>
+    </div>
+    <div class="script-queue" id="script-queue"></div>
+  </div>
+
+  <!-- Research & Keywords -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Trending Keywords & Search Terms</h2>
+      <span class="badge amber">RESEARCH</span>
+    </div>
+    <div class="keyword-cloud" id="keyword-cloud"></div>
+  </div>
+
+  <!-- Research Panels -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Content Research</h2>
+      <span class="badge pink">DEXTER</span>
+    </div>
+    <div class="research-grid" id="research-grid"></div>
+  </div>
+
+</div>
+
+<footer>
+  <a href="../">Becknology</a> · TikTok Content Hub · Updated by Taylor & Dexter
+</footer>
+
+<script>
+// ── DATA (Taylor + Dexter populate this via JSON files) ──
+
+const CALENDAR_EVENTS = [
+  { date: 'FEB 14', name: "Valentine's Day", hook: "Every box of chocolates touches 12 automated systems before it reaches your hands. Here's the supply chain of love.", tickers: ['HSY','MDLZ','KHC'], status: 'ready' },
+  { date: 'FEB 17', name: "Presidents Day / Manufacturing Week", hook: "Presidents on your money, but who makes the money? The machines behind the US Mint.", tickers: ['HON','ROK'], status: 'draft' },
+  { date: 'MAR 3', name: "National Cereal Day", hook: "Your cereal box traveled through 47 robots before breakfast. From grain silo to your bowl.", tickers: ['GIS','K','POST'], status: 'draft' },
+  { date: 'MAR 17', name: "St. Patrick's Day", hook: "The world drinks 13M pints of Guinness on St. Paddy's. Here's the automation behind every pour.", tickers: ['DEO','TAP','BUD'], status: 'draft' },
+  { date: 'MAR 20', name: "Spring / Construction Season", hook: "Spring means construction. $2T in US infrastructure and the machines that build it.", tickers: ['CAT','DE','VMC','MLM'], status: 'idea' },
+  { date: 'APR 20', name: "Easter", hook: "Cadbury makes 500M Creme Eggs/year. One factory. 24/7 automation. Here's inside.", tickers: ['MDLZ','HSY','RMCF'], status: 'idea' },
+  { date: 'MAY 5', name: "Cinco de Mayo", hook: "Americans consume 81M lbs of avocados on Cinco de Mayo. The cold chain automation that makes it possible.", tickers: ['CVGW','FDP'], status: 'idea' },
+  { date: 'MAY 26', name: "Memorial Day / BBQ Season", hook: "The average grill has 127 manufactured parts. From steel mill to your backyard.", tickers: ['NUE','STLD','WHR'], status: 'idea' },
+];
+
+const SCRIPTS = [
+  { title: "Super Bowl Ad Machines", desc: "Every Super Bowl commercial was edited on machines that cost more than your house", status: 'posted', tickers: ['AAPL','NVDA'] },
+  { title: "Valentine's Chocolate Supply Chain", desc: "From cocoa bean to heart-shaped box — 12 automated systems", status: 'ready', tickers: ['HSY','MDLZ'] },
+  { title: "How Your Coffee Gets Made", desc: "Ethiopian highlands to your cup — 23 automated systems", status: 'ready', tickers: ['SBUX','KDP'] },
+  { title: "The $2T Infrastructure Boom", desc: "Construction season + IIJA money = automation demand surge", status: 'draft', tickers: ['CAT','DE','ROK'] },
+  { title: "Robots in Your Fridge", desc: "Every item in your fridge was touched by a robot. Here's the journey.", status: 'draft', tickers: ['ABB','FANUY','SYM'] },
+];
+
+const KEYWORDS = [
+  { term: 'how its made', vol: '1.2M/mo' },
+  { term: 'factory tour', vol: '890K/mo' },
+  { term: 'automation', vol: '450K/mo' },
+  { term: 'supply chain', vol: '320K/mo' },
+  { term: 'manufacturing process', vol: '280K/mo' },
+  { term: 'how things are made', vol: '210K/mo' },
+  { term: 'industrial robots', vol: '180K/mo' },
+  { term: 'stock market investing', vol: '1.5M/mo' },
+  { term: 'investing for beginners', vol: '1.1M/mo' },
+  { term: 'hidden stock picks', vol: '90K/mo' },
+  { term: 'consumer goods stocks', vol: '45K/mo' },
+  { term: 'robotics stocks', vol: '65K/mo' },
+  { term: 'AI infrastructure', vol: '120K/mo' },
+  { term: 'caterpillar stock', vol: '74K/mo' },
+  { term: 'industrial automation market', vol: '33K/mo' },
+];
+
+const RESEARCH = [
+  { title: 'Buy Programs & Earnings', items: [
+    '<strong>$CAT</strong> — Q4 beat, raised guidance. Construction + mining strong.',
+    '<strong>$ROK</strong> — Q1 Feb 5. Automation spending outlook key.',
+    '<strong>$HON</strong> — Aerospace + building automation. Splitting into 3.',
+    '<strong>$ABB</strong> — Robotics leader. Data center demand surging.',
+    '<strong>$VRT</strong> — AI cooling. Revenue up 28% YoY.',
+  ]},
+  { title: 'Trending on TikTok (Automation)', items: [
+    '"How It\'s Made" style content — 2.1B views on hashtag',
+    'Factory ASMR — oddly satisfying machines, 890M views',
+    '"Things you didn\'t know were automated" — rising fast',
+    'Stock market education — 4.2B views, huge audience',
+    'Supply chain explainers — underserved niche, growing',
+  ]},
+  { title: 'Content Calendar Tie-Ins', items: [
+    '<strong>Feb 14</strong> — Valentine\'s: chocolate, flowers, greeting cards',
+    '<strong>Mar 17</strong> — St. Patrick\'s: beer brewing, distilling',
+    '<strong>Mar 20</strong> — Spring: construction, landscaping, agriculture',
+    '<strong>Apr 20</strong> — Easter: candy manufacturing, packaging',
+    '<strong>May 26</strong> — Memorial Day: grills, outdoor, steel',
+    '<strong>Jul 4</strong> — Independence Day: fireworks, beverages, packaging',
+  ]},
+  { title: 'Competitor Content Gaps', items: [
+    'No one connects <strong>consumer products → automation → tickers</strong>',
+    '"How It\'s Made" on TikTok is mostly reposts, not original',
+    'Finance TikTok rarely shows the PHYSICAL business',
+    'Manufacturing TikTok doesn\'t connect to investing',
+    '<strong>Becknology fills the gap between all three</strong>',
+  ]},
+];
+
+// ── RENDER ──
+
+function renderCalendar() {
+  const grid = document.getElementById('calendar-grid');
+  grid.innerHTML = CALENDAR_EVENTS.map(e => `
+    <div class="cal-card">
+      <div class="date">${e.date}</div>
+      <div class="event-name">${e.name}</div>
+      <div class="hook">${e.hook}</div>
+      <div class="tickers">${e.tickers.map(t => `<span class="ticker">$${t}</span>`).join('')}</div>
+    </div>
+  `).join('');
+}
+
+function renderScripts() {
+  const queue = document.getElementById('script-queue');
+  queue.innerHTML = SCRIPTS.map((s, i) => `
+    <div class="script-card">
+      <div class="num">${i + 1}</div>
+      <div class="info">
+        <h3>${s.title}</h3>
+        <p>${s.desc} · ${s.tickers.map(t => '$' + t).join(' ')}</p>
+      </div>
+      <span class="status status-${s.status}">${s.status.toUpperCase()}</span>
+    </div>
+  `).join('');
+}
+
+function renderKeywords() {
+  const cloud = document.getElementById('keyword-cloud');
+  cloud.innerHTML = KEYWORDS.map(k => `
+    <span class="keyword">${k.term} <span class="vol">${k.vol}</span></span>
+  `).join('');
+}
+
+function renderResearch() {
+  const grid = document.getElementById('research-grid');
+  grid.innerHTML = RESEARCH.map(r => `
+    <div class="research-card">
+      <h3>${r.title}</h3>
+      <ul>${r.items.map(i => `<li>${i}</li>`).join('')}</ul>
+    </div>
+  `).join('');
+}
+
+function updateStats() {
+  document.getElementById('scripts-count').textContent = SCRIPTS.filter(s => s.status !== 'posted').length;
+  document.getElementById('posted-count').textContent = SCRIPTS.filter(s => s.status === 'posted').length;
+  document.getElementById('upcoming-events').textContent = CALENDAR_EVENTS.length;
+  document.getElementById('keywords-tracked').textContent = KEYWORDS.length;
+}
+
+renderCalendar();
+renderScripts();
+renderKeywords();
+renderResearch();
+updateStats();
+</script>
+</body>
+</html>
