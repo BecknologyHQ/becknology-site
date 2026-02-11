@@ -27,7 +27,7 @@ jobs:
       - run: npx vite build --base=/becknology-site/
       - run: |
           for dir in gf-meal-planner tcas-calculator agency-landing dexter-dashboard becknology-dashboard content-dashboard tiktok; do
-            [ -d "$dir" ] && cp -r "$dir" dist/
+            if [ -d "$dir" ]; then cp -r "$dir" dist/; fi
           done
       - uses: actions/upload-pages-artifact@v3
         with:
