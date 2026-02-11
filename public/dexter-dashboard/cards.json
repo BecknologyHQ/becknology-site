@@ -1,68 +1,68 @@
 [
   {
-    "id": "20260211-201",
-    "title": "10,325 Robots Ordered in One Quarter. $579 Million.",
-    "series": "Where Markets Meet Machines",
-    "type": "tiktok",
-    "ticker": ["FANUY", "ABB", "ROK"],
-    "body": "In Q4 2025, North American companies ordered 10,325 industrial robots worth $579 million. That is a 6.6% jump from the year before.\n\nAutomotive led the surge. Major vehicle manufacturers are finally stabilizing after years of supply chain chaos. But here is the twist -- non-automotive orders are growing even faster. Food, pharma, logistics. Everyone wants robots now.\n\nThe companies building these machines? Fanuc (FANUY), ABB, Rockwell (ROK). They are not guessing about demand. They are filling orders.\n\nRobot density in the US is still half of South Korea's. We are early.",
-    "cta": "Follow for more. This is Becknology, where markets meet machines.",
-    "broll": "Robot arms on automotive assembly line, palletizing robots in warehouse, welding robots sparking",
-    "created": "2026-02-11T06:00:00"
-  },
-  {
-    "id": "20260211-202",
-    "title": "Rockwell Just Beat Earnings by 10.7%. Then Announced a Factory of the Future.",
-    "series": "Where Markets Meet Machines",
-    "type": "x",
-    "ticker": ["ROK"],
-    "body": "Rockwell Automation just dropped Q4 results. Adjusted EPS: $2.75 vs $2.48 expected. That is a 10.7% beat.\n\nAdjusted EBITDA hit $513 million -- a 24.4% margin.\n\nThen they announced a 1-million-square-foot factory in New Berlin, Wisconsin. Largest Rockwell campus on Earth. Part of a $2 billion bet on domestic manufacturing over 5 years.\n\nThe company that builds the brains for every assembly line in America just said: we are going bigger than ever.\n\nTicker ROK.",
-    "cta": "This is Becknology, where markets meet machines.",
-    "broll": "Rockwell HQ, PLC racks, factory construction aerial",
-    "created": "2026-02-11T06:00:00"
-  },
-  {
-    "id": "20260211-203",
-    "title": "How a Single Machine Fills 2,000 Cans Per Minute",
+    "id": "20260211-301",
+    "title": "Your Takis Go Through a Volcano",
     "series": "Machines You've Never Seen",
     "type": "tiktok",
-    "ticker": ["BALL"],
-    "body": "A modern canning line fills 2,000 aluminum cans every 60 seconds. That is 33 per second.\n\nThe can arrives empty. A filler valve opens for exactly 0.12 seconds, dispensing the precise volume. Then a lid is placed and seamed shut with two mechanical rolls -- one tucks the edge, the second crimps it airtight. The whole seal takes 0.08 seconds.\n\nEvery can gets hit with a camera inspection system checking fill level, lid placement, and date code. One bad can and the whole batch gets flagged.\n\nBall Corporation makes most of the cans. Ticker BALL. $14 billion company built on a piece of aluminum thinner than a credit card.",
-    "cta": "Next time -- how they make 12,000 bottles per hour. This is Becknology, where markets meet machines.",
-    "broll": "High-speed canning line, filler valves dispensing, seaming closeup, inspection cameras",
-    "created": "2026-02-11T09:00:00"
+    "ticker": ["GRUMA.MX"],
+    "body": "That red dust on your fingers? It didn't get there by accident.\n\nTakis start as masa -- corn flour and water -- pressed flat and cut into tiny tubes by a machine spinning at 800 RPM. Then they hit the fryer. 375 degrees. 60 seconds. Thousands at a time.\n\nBut the seasoning is the wild part. They tumble through a rotating drum while nozzles blast chili-lime powder from every angle. The drum spins so fast the coating bonds to every single fold. Miss one spot and you'd taste plain corn. That never happens.\n\nGRUMA, the company behind the tortilla machines that make this possible, does $5.2 billion a year. Most people have never heard of them.",
+    "cta": "Next time -- how Hot Cheetos get that crunch! This is Becknology where markets meet machines.",
+    "broll": "Takis production line, masa pressing, frying close-up, seasoning drum tumbling, red powder cloud",
+    "created": "2026-02-11T07:00:00"
   },
   {
-    "id": "20260211-204",
-    "title": "Industrial AI is a $184 Billion Market. Most People Have No Idea.",
-    "series": "Where Markets Meet Machines",
-    "type": "youtube",
-    "ticker": ["NVDA", "ROK", "HON"],
-    "body": "The global industrial automation market hit $184.4 billion in 2025. It is projected to reach $326 billion by 2032.\n\nThat is not consumer AI. Not chatbots. Not image generators.\n\nThis is AI that runs factories. Predictive maintenance that catches a bearing failure 3 weeks before it happens. Vision systems that inspect 500 parts per minute with zero human fatigue. Autonomous mobile robots that reroute themselves when a forklift blocks the aisle.\n\nThe companies winning this? Nvidia for the compute. Rockwell for the controls. Honeywell for the process side.\n\nEveryone is talking about AI replacing office workers. Nobody is talking about AI replacing $47/hour maintenance techs. That is where the real money is.",
-    "cta": "Subscribe for the full breakdown. This is Becknology, where markets meet machines.",
-    "broll": "Factory floor with AI overlay graphics, predictive maintenance dashboard, AMR navigating warehouse",
-    "created": "2026-02-11T12:00:00"
-  },
-  {
-    "id": "20260211-205",
-    "title": "The Machine That Sorts 400,000 Packages Per Hour",
+    "id": "20260211-302",
+    "title": "How Stanley Cups Actually Get Made",
     "series": "Machines You've Never Seen",
     "type": "tiktok",
-    "ticker": ["AMZN", "GNRC"],
-    "body": "Amazon's latest sortation centers process 400,000 packages per hour. Per. Hour.\n\nA package hits the conveyor. A 3D scanner reads its dimensions and barcode in milliseconds. An AI routing engine assigns it to one of 1,200 destination chutes. Then a series of diverters -- mechanical arms that fire with pneumatic precision -- kick it off the belt at exactly the right moment.\n\nMiss the timing by 50 milliseconds and the package ends up in the wrong zip code.\n\nThe conveyors run at 500 feet per minute. The whole system draws enough power to run 2,000 homes. And it replaced what used to take 3,000 human sorters per shift.",
-    "cta": "Follow for more machines you have never seen. This is Becknology, where markets meet machines.",
-    "broll": "Package sortation center aerial, diverter arms firing, 3D scanner reading packages, conveyor belt speed",
-    "created": "2026-02-11T15:00:00"
+    "ticker": ["SWK"],
+    "body": "Everyone has one. Nobody knows what happens inside the factory.\n\nIt starts as a flat sheet of stainless steel. A hydraulic press punches it into a cup shape with 200 tons of force -- the same pressure as parking an RV on your thumbnail.\n\nThen a second cup gets pressed. The two cups are welded together with a vacuum sealed between them. That vacuum is why your ice lasts 11 hours. No air, no heat transfer.\n\nThe powder coating? Electrostatic spray. The cup gets electrically charged, paint particles get the opposite charge, and they literally fly onto the surface and stick. Every millimeter covered.\n\nStanley is owned by Stanley Black and Decker. Ticker SWK. Their stock is down 40% from highs while selling the most viral cup on the internet.",
+    "cta": "Next time -- how Yeti does it differently! This is Becknology where markets meet machines.",
+    "broll": "Stainless steel press, vacuum sealing, powder coat booth, conveyor of finished cups",
+    "created": "2026-02-11T10:00:00"
   },
   {
-    "id": "20260211-206",
-    "title": "SICK Sensors: The Eyes Inside Every Machine You Use",
-    "series": "Where Markets Meet Machines",
-    "type": "x",
-    "ticker": ["SY1.DE"],
-    "body": "Every time you buy something off a conveyor, open a car door, or drink from a bottle -- a SICK sensor probably inspected it first.\n\nSICK AG makes the photoelectric sensors, LiDAR, vision cameras, and safety systems that run inside nearly every automated factory on Earth. 12,000+ employees. 53,000+ products.\n\nTheir safety light curtains protect workers' hands near presses. Their barcode readers sort 10,000 packages per minute at FedEx. Their 3D vision systems guide robot arms to pick the right part every time.\n\nMost investors have never heard of them. Frankfurt ticker SY1. They do not need your attention. The machines already depend on them.",
-    "cta": "This is Becknology, where markets meet machines.",
-    "broll": "SICK sensors on conveyor, safety light curtain on press, LiDAR scanning warehouse",
-    "created": "2026-02-11T18:00:00"
+    "id": "20260211-303",
+    "title": "Your AirPods Take 3 Days to Build",
+    "series": "Machines You've Never Seen",
+    "type": "tiktok",
+    "ticker": ["AAPL", "LITE"],
+    "body": "272 components. Smaller than a grape. And a robot places every single one.\n\nThe driver -- the tiny speaker that makes sound -- is 7mm across. A laser trims the diaphragm to tune it to Apple's exact frequency curve. If it's off by 0.1 decibels, it gets rejected.\n\nThe H2 chip inside? Built on a 5-nanometer process. That's 10,000 times thinner than a human hair. It runs noise cancellation 48,000 times per second.\n\nThe case hinge gets tested by a machine that opens and closes it 30,000 times to simulate 5 years of use. In one day.\n\nLumentum (LITE) makes the lasers that manufacture these chips. $1.7 billion company most Apple fans have never heard of.",
+    "cta": "Next time -- the machine that tests your iPhone screen 1,000 times before you see it! This is Becknology where markets meet machines.",
+    "broll": "AirPods assembly extreme close-up, chip placement robot, laser trimming, hinge testing machine",
+    "created": "2026-02-11T13:00:00"
+  },
+  {
+    "id": "20260211-304",
+    "title": "How Crocs Get That Ugly Shape",
+    "series": "Machines You've Never Seen",
+    "type": "tiktok",
+    "ticker": ["CROX"],
+    "body": "Crocs sold 100 million pairs last year. Every single one comes from the same machine.\n\nIt's called injection molding. Croslite resin pellets -- a proprietary foam -- get heated to 350 degrees and shot into a mold at high pressure. The mold is two halves that clamp together with 150 tons of force.\n\n8 seconds. That's it. One shoe. Done. Pop it out, trim the flash, move to the next.\n\nOne machine makes 500 pairs per hour. The holes? They're in the mold. No drilling. No cutting. Born that way.\n\nCROX stock is up 400% in 5 years. From the ugliest shoe on earth to a $7 billion company.",
+    "cta": "Next time -- how Nike Dunks are actually made! This is Becknology where markets meet machines.",
+    "broll": "Injection molding machine, Croslite pellets, mold clamping, shoe popping out of mold",
+    "created": "2026-02-11T16:00:00"
+  },
+  {
+    "id": "20260211-305",
+    "title": "The Machine That Makes Every Tesla Battery",
+    "series": "Machines You've Never Seen",
+    "type": "tiktok",
+    "ticker": ["TSLA", "AEHR"],
+    "body": "A Tesla battery pack has 4,680 cells. Each one gets tested individually before it goes in your car.\n\nThe cells start as a thin sheet of lithium, nickel, and manganese -- rolled tighter than a sleeping bag into a cylinder. The rolling has to be perfect. One wrinkle and the cell short-circuits. One short-circuit and the car catches fire.\n\nAehr Test Systems (AEHR) makes the machines that stress-test every cell. They heat them. They freeze them. They charge and discharge them hundreds of times in a few hours -- simulating years of driving.\n\nOne bad cell in 4,680 and the whole pack is compromised. The testing machine is the most important machine in the entire factory.",
+    "cta": "Next time -- how they recycle the batteries when they die! This is Becknology where markets meet machines.",
+    "broll": "Battery cell rolling, 4680 cells on conveyor, testing chamber, Tesla battery pack assembly",
+    "created": "2026-02-11T19:00:00"
+  },
+  {
+    "id": "20260211-306",
+    "title": "Your Chipotle Burrito Was Weighed by a Robot",
+    "series": "Machines You've Never Seen",
+    "type": "tiktok",
+    "ticker": ["CMG", "HPAI"],
+    "body": "Chipotle serves 1 million burritos a day. And they just spent $50 million making sure yours weighs exactly the same every time.\n\nHyphen (backed by Chipotle Ventures) built an automated makeline. Your order hits a screen. A robotic arm grabs the tortilla. Dispensers drop rice, beans, protein -- each portion measured by a load cell accurate to 0.1 ounces.\n\nThe salsa? Pneumatic squeeze. Exact same amount every time. No more \"can I get a little extra\" because the machine doesn't hear you.\n\nChipotle's stock has gone from $15 to $60 in 5 years. They're not a restaurant. They're a food assembly line that happens to have chairs.",
+    "cta": "Next time -- the machine that makes McDonald's fries all the same length! This is Becknology where markets meet machines.",
+    "broll": "Chipotle automated makeline, robotic arm grabbing tortilla, portion dispensers, load cell close-up",
+    "created": "2026-02-11T22:00:00"
   }
 ]
