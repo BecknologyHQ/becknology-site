@@ -1,68 +1,68 @@
 [
   {
-    "id": "20260211-401",
-    "title": "Your Coke Can Was Made in 0.2 Seconds",
+    "id": "20260211-501",
+    "title": "Every Takis Chip Is Rolled by a Machine That Mimics Your Fingers",
     "series": "Machines You've Never Seen",
     "type": "tiktok",
-    "ticker": ["BALL", "KO"],
-    "body": "You crack open a Coke without thinking about it. That can took 0.2 seconds to make.\n\nIt starts as a flat aluminum disc -- called a blank -- punched from a sheet. A ram slams it through a series of rings at high speed, stretching it taller and thinner with each pass. That's called drawing and ironing. The walls end up thinner than a human hair -- 0.097mm -- but can hold 90 PSI of pressure from the carbonation.\n\nThen it gets washed, dried, and printed with up to 6 colors in a single pass on a machine spinning 2,400 cans per minute. The inside gets sprayed with a food-safe coating so the soda never touches raw aluminum.\n\nAmerica makes 100 billion aluminum cans a year. That's one can per person per day. Ball Corporation (BALL) makes most of them -- $14 billion company, and their machines are why your drink costs $1 instead of $5.",
-    "cta": "Next time -- how plastic bottles are blown from tiny tubes! This is Becknology where markets meet machines.",
-    "broll": "Aluminum disc punch, drawing and ironing ram, can printing at speed, coating spray nozzle, conveyor of finished cans",
-    "created": "2026-02-11T07:00:00"
+    "ticker": ["BMBOY"],
+    "body": "Takis are the most mechanically complicated chip you've ever eaten. Here's why.\n\nIt starts as corn masa -- ground corn mixed with water and lime. That dough gets sheeted flat, then cut into small rectangles. Now here's where it gets wild. Each rectangle hits a set of curved rollers that curl it into that signature tube shape -- mimicking the motion of rolling a tortilla between your fingers. Thousands per minute.\n\nBut rolled dough wants to unroll. So the machine fries them INSTANTLY at 375 degrees. The oil flash-sets the shape in under 10 seconds. If the oil is 5 degrees too cool, they unroll. Too hot, they shatter.\n\nThen comes the seasoning tumbler -- a giant rotating drum that tosses the chips through a cloud of chili-lime powder. The tumbler has to spin at exactly the right speed. Too fast and the seasoning flies off. Too slow and you get clumps.\n\nBarcel, a subsidiary of Grupo Bimbo (BMBOY), makes over 1 billion bags of Takis a year. A $40 billion Mexican conglomerate built partly on a rolled corn chip that took 7 years to engineer.",
+    "cta": "Next time -- why Doritos are a completely different engineering problem. This is Becknology where markets meet machines.",
+    "broll": "Corn masa sheeting, rectangle cutting, curved roller close-up, flash frying, seasoning tumbler spinning",
+    "created": "2026-02-11T18:00:00"
   },
   {
-    "id": "20260211-402",
-    "title": "Why Robots Can't Make Your Nikes",
+    "id": "20260211-502",
+    "title": "Your Crocs Are One Piece of Foam -- No Glue, No Stitching",
     "series": "Machines You've Never Seen",
     "type": "tiktok",
-    "ticker": ["NKE"],
-    "body": "Nike spent millions trying to automate shoe production. The robots lost.\n\nHere's the problem. A sneaker upper -- the flexible part your foot goes into -- is made of soft, stretchy, squishy fabric. Robots are great with rigid stuff. Metal, glass, circuit boards. But try picking up a floppy piece of knit fabric and placing it perfectly? Robots fumble it.\n\nNike partnered with Flex to build a high-tech factory in Mexico. The plan was tens of millions of shoes made by machines. They brought in equipment from electronics manufacturing -- pick-and-place robots, automated gluers.\n\nThe robots struggled. The factory needed 5,000 workers -- twice what they planned. By 2019 they shut it down.\n\nOne company, Grabit, cracked part of it. Their robots use static electricity -- electroadhesion -- to grip fabric. They assemble shoe uppers 20x faster than humans. But full automation? Still impossible. Your $180 Jordans are still mostly made by hand.",
-    "cta": "Next time -- how Crocs solved this by making the ugliest shoe on earth! This is Becknology where markets meet machines.",
-    "broll": "Nike factory workers assembling uppers, Grabit electroadhesion robot, failed automation line, hand-stitching close-up",
-    "created": "2026-02-11T10:00:00"
+    "ticker": ["CROX"],
+    "body": "Every other shoe is assembled from dozens of pieces -- fabric, rubber, foam, glue, thread. Crocs? One shot of foam into a mold. Done.\n\nThe secret is Croslite -- a proprietary closed-cell resin that Crocs bought the rights to in 2004. It comes as tiny plastic pellets. Those pellets get heated until they melt, then injected into a two-piece aluminum mold shaped exactly like the shoe. Gas gets injected simultaneously, creating millions of tiny sealed air bubbles inside the foam. That's what makes them squishy.\n\nThe mold stays closed for about 45 seconds. When it opens, you have a complete shoe. Holes, heel strap, tread pattern -- all formed in a single injection. No cutting. No sewing. No glue. One machine, one step.\n\nThat's why Crocs cost $50 but have 60% gross margins. The manufacturing is absurdly cheap compared to Nike or Adidas. One factory can produce 25,000 pairs a day.\n\nCrocs (CROX) went from a joke to a $7 billion company. Turns out the ugliest shoe on earth is also the most brilliantly engineered.",
+    "cta": "Next time -- why Nike spent millions trying to automate shoe-making and failed. This is Becknology where markets meet machines.",
+    "broll": "Croslite pellets, injection mold opening, foam expansion close-up, finished shoe popping out of mold, factory conveyor",
+    "created": "2026-02-11T21:00:00"
   },
   {
-    "id": "20260211-403",
-    "title": "40 Billion Oreos and Zero Human Hands",
+    "id": "20260211-503",
+    "title": "Pringles Aren't Potato Chips -- They're Mathematically Engineered Saddles",
     "series": "Machines You've Never Seen",
     "type": "tiktok",
-    "ticker": ["MDLZ"],
-    "body": "Mondelez makes 40 billion Oreos a year. No human touches a single one.\n\nThe dough gets mixed in industrial vats -- flour, sugar, cocoa, and palm oil. It's chilled with dry ice to the exact temperature where it holds shape but doesn't crack. Then it hits a rotary molder -- a spinning drum with cookie-shaped cavities that stamps out perfect circles with that iconic Oreo pattern. Thousands per minute.\n\nTwo conveyors run side by side. One carries cookies face-up, one face-down. A machine called a sandwiching depositor squirts exactly 3 grams of cream onto the face-up cookies. Then the face-down cookies get flipped on top. Perfect sandwich. Every time.\n\nThe whole line runs so fast that one factory can produce 3 million Oreos per shift. If one cookie is 0.5mm too thick or the cream is off by a fraction of a gram, sensors catch it and kick it off the line.\n\nMondelez (MDLZ) runs this across 18 countries. $36 billion company built on one cookie.",
-    "cta": "Next time -- how Pringles get that perfect curve! This is Becknology where markets meet machines.",
-    "broll": "Rotary molder stamping cookies, cream depositor, sandwiching machine, rejection sensor, conveyor of finished Oreos",
-    "created": "2026-02-11T13:00:00"
+    "ticker": ["K"],
+    "body": "Pringles aren't sliced from potatoes. They're pressed from powder into a shape that took a chemist 20 years to perfect.\n\nThe dough is a slurry -- dehydrated potato flakes, corn starch, wheat starch, and water, mixed into a paste thinner than cookie dough. That paste gets rolled into an ultra-thin sheet and stamped with an oval cutter.\n\nHere's the engineering: each oval drops onto a convex mold that curves it into a hyperbolic paraboloid. That's the mathematical name for a saddle shape. It curves up on two sides and down on the other two. This shape does three things: it's structurally stronger than a flat chip (distributes force evenly), it stacks perfectly without breaking, and it fits a human tongue.\n\nThe shaped chips ride the mold through a fryer -- exactly 11 seconds in oil at 365 degrees. Then a conveyor flips them onto a belt where they cool in precise rows. A machine counts exactly the right number and drops them into the can.\n\nFredric Baur invented the shape in 1956. Alexander Liepa perfected the flavor in 1975. It took two decades and two engineers. Kellogg's (K) now sells Pringles in 140 countries.",
+    "cta": "Next time -- how Lay's uses lasers to sort chips by color. This is Becknology where markets meet machines.",
+    "broll": "Potato slurry mixing, sheet rolling, oval stamping, saddle mold, frying on mold, stacking into can",
+    "created": "2026-02-12T00:00:00"
   },
   {
-    "id": "20260211-404",
-    "title": "Your Lululemon Leggings Started as Oil",
+    "id": "20260211-504",
+    "title": "Your AirPods Have a Speaker the Size of a Pea That Took 600 Steps to Build",
     "series": "Machines You've Never Seen",
     "type": "tiktok",
-    "ticker": ["LULU"],
-    "body": "Those $100 leggings you're wearing? They started as crude oil in a refinery.\n\nLululemon's signature fabric is called Luon -- 86% nylon, 14% Lycra. Nylon is a plastic. It begins as a petrochemical called adipic acid mixed with hexamethylenediamine. Those combine at 545 degrees Fahrenheit to form nylon 6,6 polymer. The molten polymer gets extruded through a spinneret -- a metal plate with holes thinner than a spider's silk -- into long continuous fibers.\n\nThose fibers get stretched to 4x their length to align the molecules. That stretching is what makes nylon strong, flexible, and moisture-wicking. Then the fibers are knit into fabric on circular knitting machines running 3,000 RPM with 3,000 needles working simultaneously.\n\nThe fabric ships from Taiwan to Vietnam, where CAD-guided laser cutters slice the patterns. Human workers sew them -- about 20 minutes per pair.\n\nFrom oil well to yoga class. A $50 billion company built on fancy plastic pants.",
-    "cta": "Next time -- how Nike Dri-FIT actually wicks sweat! This is Becknology where markets meet machines.",
-    "broll": "Nylon polymer extrusion, spinneret close-up, fiber stretching, circular knitting machine, laser fabric cutting",
-    "created": "2026-02-11T16:00:00"
+    "ticker": ["AAPL"],
+    "body": "Each AirPod contains over 200 components packed into a space smaller than your thumb. The assembly is so dense that machines do things human hands physically cannot.\n\nThe speaker driver is 11mm across -- smaller than a dime. Inside it: a voice coil thinner than a human hair wound around a magnet, a diaphragm that vibrates 20,000 times per second, and a mesh filter with holes precisely sized to tune bass response. That speaker gets assembled by machines with micron-level accuracy. One micron is 1/100th the width of a hair.\n\nThe H2 chip -- Apple's custom silicon -- gets placed by pick-and-place robots that move 40,000 components per hour. The battery is a custom lithium-ion cell shaped like a tiny cylinder, holding just 0.4 watt-hours. That's enough for 6 hours of music because the H2 chip sips power at 1/10th what a phone processor uses.\n\nEach AirPod goes through ultrasonic welding -- high-frequency vibrations fuse the plastic shell shut without glue or screws. Then acoustic testing: every single unit plays a test tone and a microphone verifies the frequency response matches spec.\n\nApple (AAPL) sells over 100 million AirPods a year. That's 600 million tiny speakers built to tolerances tighter than a Swiss watch.",
+    "cta": "Next time -- how noise cancellation works by playing sound AGAINST sound. This is Becknology where markets meet machines.",
+    "broll": "Micro speaker driver assembly, pick-and-place robot, tiny battery cell, ultrasonic welding, acoustic test chamber",
+    "created": "2026-02-12T03:00:00"
   },
   {
-    "id": "20260211-405",
-    "title": "Celsius Energy Drinks Are Basically Soda Made in a Lab",
+    "id": "20260211-505",
+    "title": "Stanley Cups Have LEAD in Them -- Here's Why That's (Mostly) Fine",
     "series": "Machines You've Never Seen",
     "type": "tiktok",
-    "ticker": ["CELH"],
-    "body": "Celsius just bought its own factory. Here's what happens inside.\n\nStep one: a mixing tank the size of a swimming pool. Purified water gets blended with caffeine, taurine, green tea extract, guarana, and ginger root. The mix is heated to pasteurize it -- kill any bacteria -- then rapidly cooled so the ingredients don't break down.\n\nStep two: carbonation. CO2 gets forced into the liquid at 60 PSI in a sealed tank. The colder the liquid, the more CO2 dissolves. That's why they chill it to near-freezing first.\n\nStep three: the filler. Cans run through a rotary filler that fills 1,200 cans per minute. Each can gets exactly 12 oz -- a load cell weighs every single one. Too heavy or too light? Rejected.\n\nStep four: the seamer. A lid drops on and two rollers crimp it shut in 0.1 seconds. The seal has to hold 90 PSI or the can explodes on the shelf.\n\nCelsius (CELH) went from $0 to $1.3 billion in revenue in 5 years. They acquired Big Beverages manufacturing to bring production in-house.",
-    "cta": "Next time -- why Monster and Red Bull taste different even with the same ingredients! This is Becknology where markets meet machines.",
-    "broll": "Giant mixing tanks, carbonation chamber, rotary can filler at speed, seaming machine, quality rejection",
-    "created": "2026-02-11T19:00:00"
+    "ticker": [],
+    "body": "Your $45 Stanley tumbler has lead sealed inside it. Not a defect -- it's how vacuum insulation works.\n\nA Stanley is two cups, one inside the other. The inner cup is 18/8 stainless steel -- 18% chromium, 8% nickel. The outer cup is the same. Between them? Nothing. Literally a vacuum.\n\nHere's how they make the vacuum: machines weld the inner and outer walls together at the rim. Then a tiny hole at the bottom lets a pump suck all the air out. Once it's a vacuum, that hole needs to be permanently sealed. The sealant? A lead-based solder dot, covered by a stainless steel plate welded over it.\n\nThe lead never touches your drink. It sits between two layers of steel behind a welded plate. But when class action lawyers found out in 2024, the lawsuits started anyway.\n\nThe vacuum itself is the magic. Without air molecules to conduct heat, your ice stays frozen for 11+ hours. It's the same physics as a Thermos from 1904 -- Sir James Dewar's invention. Stanley just made it trendy.\n\nTheir parent company PMI went from $70 million to $750 million in revenue in 3 years. Mostly from moms on TikTok.",
+    "cta": "Next time -- how Yeti fights Stanley with a completely different insulation method. This is Becknology where markets meet machines.",
+    "broll": "Double-wall steel forming, vacuum pump extraction, solder seal close-up, cross-section diagram, ice staying frozen timelapse",
+    "created": "2026-02-12T06:00:00"
   },
   {
-    "id": "20260211-406",
-    "title": "Your iPhone Screen Gets Punched 10,000 Times Before You See It",
+    "id": "20260211-506",
+    "title": "Hot Cheetos Get Their Color from Bugs",
     "series": "Machines You've Never Seen",
     "type": "tiktok",
-    "ticker": ["AAPL", "CRNX"],
-    "body": "Apple doesn't trust its own screens. So it beats them up first.\n\nEvery iPhone display starts as a sheet of aluminosilicate glass made by Corning. The glass gets dropped into a molten potassium salt bath at 750 degrees for hours. Smaller sodium ions in the glass swap with larger potassium ions. This jams the surface into compression -- like inflating a basketball inside a soccer ball. That compression is what makes it scratch-resistant.\n\nBut Ceramic Shield -- the stuff on recent iPhones -- goes further. Nano-crystalline ceramics are grown directly inside the glass matrix. Crystals harder than most metals, embedded in glass that bends.\n\nThen the testing starts. Machines drop steel balls on it from increasing heights. Tumble it with sandpaper. Press a Vickers diamond into the surface at measured force. Simulate a pocket full of keys rubbing 10,000 cycles. If it survives all that, it goes in your phone.\n\nCorning (GLW) has made the glass on every iPhone ever. $35 billion company hiding in your pocket.",
-    "cta": "Next time -- how OLED pixels are printed by lasers thinner than light! This is Becknology where markets meet machines.",
-    "broll": "Molten salt bath, ion exchange diagram, steel ball drop test, Vickers hardness test, scratch cycling machine",
-    "created": "2026-02-11T22:00:00"
+    "ticker": ["PEP"],
+    "body": "Flamin' Hot Cheetos start as plain corn puffs. The heat, the color, the addiction -- all comes from a powder added AFTER.\n\nStep one: cornmeal gets mixed with water and fed into an extruder -- a machine that forces the dough through a die at high pressure. When it exits, the sudden pressure drop makes it puff up instantly. Same physics as popcorn. The extruder spins at 300 RPM and shoots out 1,200 pounds of puffs per hour.\n\nStep two: the puffs get baked, not fried. A conveyor carries them through an oven at 400 degrees.\n\nStep three: the coating. Hot oil gets sprayed on the puffs so the seasoning sticks. Then they tumble through a drum where the Flamin' Hot powder coats every surface. That red color? Part of it comes from carmine -- a dye made from crushed cochineal insects. Thousands of tiny bugs per batch, ground into powder. It's listed on the ingredients as 'Red 40 Lake' in some versions, but carmine shows up in many red-coated snacks.\n\nFrito-Lay, owned by PepsiCo (PEP), makes an estimated $3 billion a year from Flamin' Hot products alone. The seasoning formula is one of the most closely guarded recipes in snack food.",
+    "cta": "Next time -- how Cheez-Its get that perfect square with the hole in the middle. This is Becknology where markets meet machines.",
+    "broll": "Corn extruder shooting puffs, oven conveyor, oil spray nozzles, seasoning tumbler, red powder cloud, finished Cheetos",
+    "created": "2026-02-12T09:00:00"
   }
 ]
