@@ -1,0 +1,548 @@
+/* ─── BASE RESET & FONTS ──────────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #8b5cf6 #0a0a0a;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8b5cf6, #3b82f6);
+  border-radius: 4px;
+}
+
+body {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0a0a0a;
+  color: #f0f0f5;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* ─── APP CONTAINER ───────────────────────────────────────────────────────── */
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.bg-gradient {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+/* ─── HEADER ──────────────────────────────────────────────────────────────── */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 32px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.infinity-logo {
+  width: 60px;
+  height: 30px;
+  filter: drop-shadow(0 0 12px rgba(139, 92, 246, 0.4));
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.header-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header-tagline {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  color: #6b7280;
+}
+
+.header-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.header-date {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #e5e7eb;
+}
+
+.header-week {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* ─── STATUS LEGEND ───────────────────────────────────────────────────────── */
+
+.status-legend {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: rgba(15, 15, 20, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.legend-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #6b7280;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ─── STATUS BADGE ────────────────────────────────────────────────────────── */
+
+.status-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid;
+  text-transform: uppercase;
+}
+
+/* ─── TICKER PILL ─────────────────────────────────────────────────────────── */
+
+.ticker-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #a78bfa;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.ticker-group {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* ─── SECTIONS ────────────────────────────────────────────────────────────── */
+
+.section {
+  margin-bottom: 48px;
+}
+
+.section-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #e5e7eb;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-icon {
+  font-size: 1.2rem;
+}
+
+.section-subtitle {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: -12px;
+  margin-bottom: 20px;
+}
+
+/* ─── THIS WEEK GRID ──────────────────────────────────────────────────────── */
+
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.content-card {
+  background: linear-gradient(135deg, rgba(15, 15, 20, 0.8), rgba(20, 20, 28, 0.6));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.content-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(139, 92, 246, 0.1);
+}
+
+.tiktok-card {
+  border-left: 3px solid #ff0050;
+}
+
+.sunday-card {
+  border-left: 3px solid #ff0000;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.day-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #8b5cf6;
+  letter-spacing: 1px;
+}
+
+.platform-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  color: #6b7280;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.platform-tag.youtube {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.card-topic {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #f0f0f5;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ─── X POSTS GRID ────────────────────────────────────────────────────────── */
+
+.x-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.x-post-card {
+  background: linear-gradient(135deg, rgba(15, 15, 20, 0.7), rgba(20, 20, 28, 0.5));
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+
+.x-post-card:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  background: linear-gradient(135deg, rgba(18, 18, 24, 0.8), rgba(24, 24, 32, 0.6));
+}
+
+.x-post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.x-post-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #8b5cf6;
+  font-weight: 600;
+}
+
+.x-post-preview {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ─── UPCOMING GRID ───────────────────────────────────────────────────────── */
+
+.upcoming-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.upcoming-card {
+  background: linear-gradient(135deg, rgba(15, 15, 20, 0.8), rgba(20, 20, 28, 0.6));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.upcoming-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(236, 72, 153, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.upcoming-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ec4899;
+  background: rgba(236, 72, 153, 0.1);
+  padding: 10px 16px;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(236, 72, 153, 0.15);
+}
+
+.upcoming-content {
+  padding: 16px;
+}
+
+.upcoming-event {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #f0f0f5;
+  margin-bottom: 6px;
+}
+
+.upcoming-hook {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+/* ─── YOUTUBE TABLE ───────────────────────────────────────────────────────── */
+
+.youtube-table {
+  background: linear-gradient(135deg, rgba(15, 15, 20, 0.8), rgba(20, 20, 28, 0.6));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.youtube-header {
+  display: grid;
+  grid-template-columns: 60px 100px 1fr 200px 80px;
+  gap: 16px;
+  padding: 14px 20px;
+  background: rgba(139, 92, 246, 0.08);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #8b5cf6;
+  letter-spacing: 1px;
+}
+
+.youtube-row {
+  display: grid;
+  grid-template-columns: 60px 100px 1fr 200px 80px;
+  gap: 16px;
+  padding: 16px 20px;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  transition: background 0.2s ease;
+}
+
+.youtube-row:last-child {
+  border-bottom: none;
+}
+
+.youtube-row:hover {
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.ep-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  color: #a78bfa;
+}
+
+.ep-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.ep-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  color: #f0f0f5;
+}
+
+.ep-tickers {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.ep-views {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: #6b7280;
+  text-align: right;
+}
+
+/* ─── FOOTER ──────────────────────────────────────────────────────────────── */
+
+.footer {
+  text-align: center;
+  padding: 32px 0;
+  margin-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer p {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #4b5563;
+}
+
+/* ─── RESPONSIVE ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .week-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .upcoming-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .youtube-header,
+  .youtube-row {
+    grid-template-columns: 50px 80px 1fr 150px 60px;
+    gap: 12px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 16px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .header-meta {
+    align-items: flex-start;
+  }
+
+  .week-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .upcoming-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .x-posts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .youtube-table {
+    overflow-x: auto;
+  }
+
+  .youtube-header,
+  .youtube-row {
+    min-width: 600px;
+  }
+
+  .status-legend {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-title {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+  }
+
+  .infinity-logo {
+    width: 48px;
+    height: 24px;
+  }
+
+  .section-title {
+    font-size: 1rem;
+  }
+}
