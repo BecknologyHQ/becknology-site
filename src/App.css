@@ -1,0 +1,417 @@
+/* ─── RESET & BASE ────────────────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f8f9fa;
+  color: #1a1a2e;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── PAGE CONTAINER ──────────────────────────────────────────────────────── */
+
+.wl-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
+}
+
+/* ─── HEADER ──────────────────────────────────────────────────────────────── */
+
+.wl-header {
+  background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #0f0f1a 100%);
+  color: #fff;
+  padding: 32px 40px 24px;
+}
+
+.wl-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.wl-header-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.wl-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  border: 2px solid rgba(139, 92, 246, 0.3);
+}
+
+.wl-header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.wl-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #fff 0%, #c4b5fd 50%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.wl-date {
+  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  letter-spacing: 1px;
+}
+
+.wl-tagline {
+  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #8b5cf6;
+  text-align: right;
+}
+
+.wl-subheader {
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.15), rgba(59, 130, 246, 0.1), rgba(236, 72, 153, 0.1));
+  padding: 16px 40px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.wl-subheader p {
+  font-size: 0.95rem;
+  color: #d1d5db;
+  margin: 0;
+}
+
+.wl-subheader strong {
+  color: #c4b5fd;
+}
+
+/* ─── MAIN GRID ───────────────────────────────────────────────────────────── */
+
+.wl-main {
+  padding: 40px;
+  background: #fff;
+}
+
+.wl-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ─── TICKER CARDS ────────────────────────────────────────────────────────── */
+
+.wl-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-top: 4px solid var(--accent, #8b5cf6);
+}
+
+.wl-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.wl-card-header {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.wl-ticker {
+  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--accent, #8b5cf6);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.wl-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  display: block;
+}
+
+.wl-section {
+  margin-bottom: 20px;
+}
+
+.wl-section:last-child {
+  margin-bottom: 0;
+}
+
+.wl-section-title {
+  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wl-section-title::before {
+  content: '';
+  width: 12px;
+  height: 2px;
+  background: var(--accent, #8b5cf6);
+  border-radius: 1px;
+}
+
+.wl-why-watch {
+  color: #059669;
+}
+
+.wl-why-watch::before {
+  background: #059669;
+}
+
+.wl-section-text {
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.65;
+}
+
+/* ─── FOOTER ──────────────────────────────────────────────────────────────── */
+
+.wl-footer {
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  padding: 24px 40px;
+}
+
+.wl-disclaimer {
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+}
+
+.wl-disclaimer p {
+  font-size: 0.8rem;
+  color: #92400e;
+  margin: 0;
+  text-align: center;
+}
+
+.wl-disclaimer strong {
+  color: #78350f;
+}
+
+.wl-footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.wl-footer-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.wl-icon {
+  width: 16px;
+  height: 16px;
+  color: #8b5cf6;
+}
+
+/* ─── PRINT BUTTON ────────────────────────────────────────────────────────── */
+
+.wl-print-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #6d28d9 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 1000;
+}
+
+.wl-print-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(139, 92, 246, 0.5);
+}
+
+.wl-print-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ─── RESPONSIVE ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .wl-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .wl-header {
+    padding: 24px 24px 20px;
+  }
+
+  .wl-header-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .wl-header-brand {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .wl-tagline {
+    text-align: center;
+  }
+
+  .wl-subheader {
+    padding: 14px 24px;
+  }
+
+  .wl-main {
+    padding: 24px;
+  }
+
+  .wl-footer {
+    padding: 20px 24px;
+  }
+
+  .wl-footer-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .wl-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wl-card {
+    padding: 20px;
+  }
+
+  .wl-ticker {
+    font-size: 1.5rem;
+  }
+
+  .wl-print-btn {
+    bottom: 16px;
+    right: 16px;
+    padding: 12px 20px;
+    font-size: 0.85rem;
+  }
+}
+
+/* ─── PRINT STYLES ────────────────────────────────────────────────────────── */
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  html, body {
+    background: #fff !important;
+  }
+
+  .wl-page {
+    max-width: 100%;
+    box-shadow: none;
+    margin: 0;
+  }
+
+  .wl-header {
+    background: #0f0f1a !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .wl-title {
+    -webkit-text-fill-color: #fff;
+    color: #fff;
+  }
+
+  .wl-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .wl-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: 1px solid #d1d5db;
+    box-shadow: none;
+  }
+
+  .wl-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .wl-main {
+    padding: 24px 32px;
+  }
+
+  .wl-footer {
+    padding: 16px 32px;
+  }
+
+  .wl-disclaimer {
+    background: #fef3c7 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  @page {
+    margin: 0.5in;
+    size: letter landscape;
+  }
+}
