@@ -1,127 +1,250 @@
-import logoSquare from '/logo.png'
 import './App.css'
 
-// ─── WATCHLIST DATA — WEEK 1 (March 1, 2026) ─────────────────────────────────
+// ─── DATA ────────────────────────────────────────────────────────────────────
 
-const WATCHLIST = [
-  {
-    ticker: 'ONTO',
-    name: 'Onto Innovation',
-    hiddenStory: 'Every semiconductor fab being built in America needs machines that inspect wafers at the nanometer level. 3 companies on earth build them. One is in Wilmington MA.',
-    whyWatch: 'CHIPS Act funding is flowing. TSMC Arizona, Intel Ohio, Samsung Texas = new customers. Every new fab is a new contract.',
-    accent: '#8b5cf6',
-  },
-  {
-    ticker: 'CMP',
-    name: 'Compass Minerals',
-    hiddenStory: 'There is a mine 2000 feet underground in Hutchinson Kansas. The caverns are large enough to fit Manhattan inside. It has been running for 100 years. They supply road salt for half of North America.',
-    whyWatch: 'The Boston blizzard this week was a direct revenue event. Winter storms = instant demand spike. Real assets in the ground. No software can disrupt a salt mine.',
-    accent: '#3b82f6',
-  },
-  {
-    ticker: 'BCPC',
-    name: 'Balchem Corporation',
-    hiddenStory: 'Approximately 90% of global creatine monohydrate is manufactured at a single facility in China. The creatine gummy boom on TikTok has one supply chain chokepoint.',
-    whyWatch: 'Tariff escalation on Chinese specialty chemicals hits every supplement brand simultaneously. Balchem builds domestic specialty nutrition ingredients. Tailwind forming.',
-    accent: '#ec4899',
-  },
+const CONTENT_PIPELINE = [
+  { day: 'Monday', type: 'TikTok', topic: 'Manufacturing Monday', status: 'Draft' },
+  { day: 'Wednesday', type: 'TikTok', topic: 'Wild Fact Wednesday', status: 'Draft' },
+  { day: 'Friday', type: 'TikTok', topic: 'Factory Friday', status: 'Draft' },
+  { day: 'Sunday', type: 'Sunday Show', topic: 'Weekly Deep Dive', status: 'Draft' },
 ]
 
-// ─── COMPONENTS ──────────────────────────────────────────────────────────────
+const X_POSTS = [
+  { content: 'State of the Union manufacturing analysis', impressions: 1247, date: 'Feb 24' },
+  { content: 'Boeing 737 supply chain breakdown', impressions: 892, date: 'Feb 23' },
+  { content: 'Tesla Model Y production insights', impressions: 634, date: 'Feb 22' },
+  { content: 'Frito-Lay chips automation', impressions: 521, date: 'Feb 21' },
+  { content: 'Ball Corp aluminum cans process', impressions: 445, date: 'Feb 20' },
+]
+
+const ACTIVE_AGENTS = [
+  { name: 'Dexter', task: 'Content research', status: 'Running' },
+  { name: 'Market Scanner', task: 'Ticker analysis', status: 'Idle' },
+  { name: 'Social Monitor', task: 'X engagement tracking', status: 'Running' },
+]
+
+const TICKER_TRACKER = [
+  { date: 'Feb-24', ticker: 'NVDA', bias: 'Bullish', status: 'Active' },
+  { date: 'Feb-26', ticker: 'VRT', bias: 'Bullish', status: 'Pending' },
+  { date: 'Feb-28', ticker: 'ROK', bias: 'Bullish', status: 'Pending' },
+]
+
+const NORTH_STAR_METRICS = {
+  email: 0,
+  xFollowers: 5,
+  posts: 88,
+  revenue: 0,
+}
+
+// ─── INFINITY LOGO SVG ───────────────────────────────────────────────────────
+
+function InfinityLogo() {
+  return (
+    <svg viewBox="0 0 120 60" className="mc-logo" aria-label="Becknology">
+      <defs>
+        <linearGradient id="infinityGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#8b5cf6" />
+          <stop offset="50%" stopColor="#3b82f6" />
+          <stop offset="100%" stopColor="#8b5cf6" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M30 30c0-8.284 6.716-15 15-15 8.284 0 15 6.716 15 15 0 8.284-6.716 15-15 15-8.284 0-15-6.716-15-15zm30 0c0-8.284 6.716-15 15-15 8.284 0 15 6.716 15 15 0 8.284-6.716 15-15 15-8.284 0-15-6.716-15-15z"
+        fill="none"
+        stroke="url(#infinityGrad)"
+        strokeWidth="4"
+        strokeLinecap="round"
+      />
+    </svg>
+  )
+}
+
+// ─── STATUS PILL ─────────────────────────────────────────────────────────────
+
+function StatusPill({ status }) {
+  const statusColors = {
+    Draft: 'pill-draft',
+    Approved: 'pill-approved',
+    Filmed: 'pill-filmed',
+    Posted: 'pill-posted',
+    Running: 'pill-running',
+    Idle: 'pill-idle',
+    Active: 'pill-active',
+    Pending: 'pill-pending',
+  }
+  return <span className={`mc-pill ${statusColors[status] || ''}`}>{status}</span>
+}
+
+// ─── HEADER ──────────────────────────────────────────────────────────────────
 
 function Header() {
+  const today = new Date().toLocaleDateString('en-US', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
+
   return (
-    <header className="wl-header">
-      <div className="wl-header-inner">
-        <div className="wl-header-brand">
-          <img src={logoSquare} alt="Becknology" className="wl-logo" />
-          <div className="wl-header-text">
-            <h1 className="wl-title">BECKNOLOGY WEEKLY WATCHLIST</h1>
-            <p className="wl-date">Week of March 1, 2026</p>
-          </div>
-        </div>
-        <p className="wl-tagline">Where Markets Meet Machines</p>
+    <header className="mc-header">
+      <div className="mc-header-left">
+        <InfinityLogo />
+        <h1 className="mc-title">Mission Control</h1>
       </div>
-      <div className="wl-subheader">
-        <p>The hidden story behind what you buy — free every Sunday morning at <strong>becknology.com</strong></p>
+      <div className="mc-header-right">
+        <span className="mc-date">{today}</span>
       </div>
     </header>
   )
 }
 
-function TickerCard({ ticker, name, hiddenStory, whyWatch, accent }) {
+// ─── MISSION BANNER ──────────────────────────────────────────────────────────
+
+function MissionBanner() {
   return (
-    <article className="wl-card" style={{ '--accent': accent }}>
-      <div className="wl-card-header">
-        <span className="wl-ticker">${ticker}</span>
-        <span className="wl-name">{name}</span>
-      </div>
-
-      <div className="wl-section">
-        <h3 className="wl-section-title">The Hidden Story</h3>
-        <p className="wl-section-text">{hiddenStory}</p>
-      </div>
-
-      <div className="wl-section">
-        <h3 className="wl-section-title wl-why-watch">Why Watch</h3>
-        <p className="wl-section-text">{whyWatch}</p>
-      </div>
-    </article>
+    <section className="mc-mission-banner">
+      <p className="mc-mission-text">
+        Build the world&apos;s best translation layer between manufacturing and markets
+        and make Andrew Becker financially free by age 42.
+      </p>
+    </section>
   )
 }
 
-function WatchlistGrid() {
+// ─── CONTENT PIPELINE ────────────────────────────────────────────────────────
+
+function ContentPipeline() {
   return (
-    <main className="wl-main">
-      <div className="wl-grid">
-        {WATCHLIST.map((item, i) => (
-          <TickerCard key={i} {...item} />
+    <section className="mc-section">
+      <h2 className="mc-section-title">Content Pipeline</h2>
+      <div className="mc-pipeline-grid">
+        {CONTENT_PIPELINE.map((item, i) => (
+          <div key={i} className="mc-pipeline-card">
+            <div className="mc-pipeline-header">
+              <span className="mc-pipeline-day">{item.day}</span>
+              <span className="mc-pipeline-type">{item.type}</span>
+            </div>
+            <p className="mc-pipeline-topic">{item.topic}</p>
+            <StatusPill status={item.status} />
+          </div>
         ))}
       </div>
-    </main>
+    </section>
   )
 }
 
-function Footer() {
+// ─── X PERFORMANCE ───────────────────────────────────────────────────────────
+
+function XPerformance() {
   return (
-    <footer className="wl-footer">
-      <div className="wl-disclaimer">
-        <p><strong>Disclaimer:</strong> Education and entertainment only. Not financial advice. Do your own research.</p>
+    <section className="mc-section">
+      <h2 className="mc-section-title">X Performance</h2>
+      <div className="mc-table-wrap">
+        <table className="mc-table">
+          <thead>
+            <tr>
+              <th>Post</th>
+              <th>Impressions</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {X_POSTS.map((post, i) => (
+              <tr key={i}>
+                <td>{post.content}</td>
+                <td className="mc-impressions">{post.impressions.toLocaleString()}</td>
+                <td className="mc-date-cell">{post.date}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-      <div className="wl-footer-links">
-        <span className="wl-footer-item">
-          <svg className="wl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-          </svg>
-          becknology.com
-        </span>
-        <span className="wl-footer-item">
-          <svg className="wl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-          </svg>
-          New episode every Sunday at 7 PM Central
-        </span>
-        <span className="wl-footer-item">
-          <svg className="wl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
-          </svg>
-          @BecknologyTV
-        </span>
-      </div>
-    </footer>
+    </section>
   )
 }
 
-function PrintButton() {
+// ─── ACTIVE AGENTS ───────────────────────────────────────────────────────────
+
+function ActiveAgents() {
   return (
-    <button className="wl-print-btn no-print" onClick={() => window.print()}>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="6 9 6 2 18 2 18 9"/>
-        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
-        <rect x="6" y="14" width="12" height="8"/>
-      </svg>
-      Print / Save PDF
-    </button>
+    <section className="mc-section">
+      <h2 className="mc-section-title">Active Agents</h2>
+      <div className="mc-agents-grid">
+        {ACTIVE_AGENTS.map((agent, i) => (
+          <div key={i} className="mc-agent-card">
+            <div className="mc-agent-header">
+              <span className="mc-agent-name">{agent.name}</span>
+              <StatusPill status={agent.status} />
+            </div>
+            <p className="mc-agent-task">{agent.task}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+// ─── TICKER TRACKER ──────────────────────────────────────────────────────────
+
+function TickerTracker() {
+  return (
+    <section className="mc-section">
+      <h2 className="mc-section-title">Ticker Tracker</h2>
+      <div className="mc-table-wrap">
+        <table className="mc-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Ticker</th>
+              <th>Bias</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {TICKER_TRACKER.map((item, i) => (
+              <tr key={i}>
+                <td>{item.date}</td>
+                <td className="mc-ticker-symbol">{item.ticker}</td>
+                <td className="mc-bias-bullish">{item.bias}</td>
+                <td><StatusPill status={item.status} /></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )
+}
+
+// ─── NORTH STAR METRICS ──────────────────────────────────────────────────────
+
+function NorthStarMetrics() {
+  return (
+    <section className="mc-section mc-north-star">
+      <h2 className="mc-section-title">North Star Metrics</h2>
+      <div className="mc-metrics-grid">
+        <div className="mc-metric-card">
+          <span className="mc-metric-value">{NORTH_STAR_METRICS.email}</span>
+          <span className="mc-metric-label">Email Subscribers</span>
+        </div>
+        <div className="mc-metric-card">
+          <span className="mc-metric-value">{NORTH_STAR_METRICS.xFollowers}</span>
+          <span className="mc-metric-label">X Followers</span>
+        </div>
+        <div className="mc-metric-card">
+          <span className="mc-metric-value">{NORTH_STAR_METRICS.posts}</span>
+          <span className="mc-metric-label">Total Posts</span>
+        </div>
+        <div className="mc-metric-card">
+          <span className="mc-metric-value">${NORTH_STAR_METRICS.revenue}</span>
+          <span className="mc-metric-label">Revenue</span>
+        </div>
+      </div>
+      <div className="mc-goal-banner">
+        <span className="mc-goal-icon">🎯</span>
+        <span className="mc-goal-text">Goal: Freedom by 42</span>
+      </div>
+    </section>
   )
 }
 
@@ -129,11 +252,18 @@ function PrintButton() {
 
 function App() {
   return (
-    <div className="wl-page">
-      <PrintButton />
+    <div className="mc-app">
       <Header />
-      <WatchlistGrid />
-      <Footer />
+      <main className="mc-main">
+        <MissionBanner />
+        <div className="mc-grid-layout">
+          <ContentPipeline />
+          <XPerformance />
+          <ActiveAgents />
+          <TickerTracker />
+        </div>
+        <NorthStarMetrics />
+      </main>
     </div>
   )
 }
